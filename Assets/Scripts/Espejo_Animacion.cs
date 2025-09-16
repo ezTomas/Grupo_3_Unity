@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 
-public class UtilidadDeEspejo: MonoBehaviour
+public class UtilidadDeEspejo : MonoBehaviour
 {
     public Transform espejo1;
 
@@ -17,13 +17,13 @@ public class UtilidadDeEspejo: MonoBehaviour
 
     private bool activadoJumpScare = false;
     public float temporizadorEspejo = 0f;
-    private float tiempoLimiteEspejo = 20f;
+    private float tiempoLimiteEspejo = 2f;
 
     public float temporizadorJumpScare = 0f;
     private float limiteJumpScare = 2f;
 
     private float couldownLimite = 0f;
-    public float couldownEspejo = 30f;
+    public float couldownEspejo = 7f;
     private bool couldown = false;
 
 
@@ -36,13 +36,14 @@ public class UtilidadDeEspejo: MonoBehaviour
 
     void Update()
     {
+
         if (couldown)
         {
             couldownEspejo -= Time.deltaTime;
-            if (couldownEspejo <= couldownLimite)
+            if (couldownEspejo <= 0f)
             {
                 couldown = false;
-                couldownEspejo = 0f;
+                couldownEspejo = 30f;
             }
         }
 
@@ -57,37 +58,33 @@ public class UtilidadDeEspejo: MonoBehaviour
         {
             espejo1.localPosition = originalPositionEspejo1;
             espejo1.localRotation = originalRotationEspejo1;
+
+
             if (!activadoJumpScare)
             {
                 temporizadorEspejo = 0f;
             }
-                
         }
 
-        if (temporizadorEspejo >= tiempoLimiteEspejo || activadoJumpScare == false)
+        if (temporizadorEspejo >= tiempoLimiteEspejo && !activadoJumpScare && !couldown)
         {
             activadoJumpScare = true;
-            if (temporizadorEspejo >= tiempoLimiteEspejo)
-            {
-                negro.SetActive(true);
-                temporizadorJumpScare += Time.deltaTime;
-                temporizadorEspejo = 3f;
-                couldown = true;
-            }
+            negro.SetActive(true);
+            temporizadorJumpScare = 0f;
+            couldown = true;
+        }
+
+
+        if (activadoJumpScare)
+        {
+            temporizadorJumpScare += Time.deltaTime;
+
             if (temporizadorJumpScare >= limiteJumpScare)
             {
                 negro.SetActive(false);
-                temporizadorJumpScare = 0f;
                 activadoJumpScare = false;
                 temporizadorEspejo = 0f;
-                
             }
-
         }
-        else
-        {
-            activadoJumpScare = false;
-        }
-        
     }
 }
