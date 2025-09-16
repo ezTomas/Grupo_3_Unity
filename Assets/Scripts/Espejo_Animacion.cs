@@ -17,13 +17,13 @@ public class UtilidadDeEspejo: MonoBehaviour
 
     private bool activadoJumpScare = false;
     public float temporizadorEspejo = 0f;
-    private float tiempoLimiteEspejo = 3f;
+    private float tiempoLimiteEspejo = 20f;
 
     public float temporizadorJumpScare = 0f;
     private float limiteJumpScare = 2f;
 
     private float couldownLimite = 0f;
-    public float couldownEspejo = 5f;
+    public float couldownEspejo = 30f;
     private bool couldown = false;
 
 
