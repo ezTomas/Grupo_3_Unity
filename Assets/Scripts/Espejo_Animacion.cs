@@ -13,18 +13,18 @@ public class UtilidadDeEspejo: MonoBehaviour
     public Vector3 newPositionEspejo1;
     public Vector3 newRotationEspejo1;
 
-    //Temporizador
     public GameObject negro;
 
-    private bool activadoJumpScare;
+    private bool activadoJumpScare = false;
     public float temporizadorEspejo = 0f;
     private float tiempoLimiteEspejo = 3f;
 
-    private float temporizadorJumpScare = 0f;
+    public float temporizadorJumpScare = 0f;
     private float limiteJumpScare = 2f;
 
-
-    private float couldownEspejo = 5f;
+    private float couldownLimite = 0f;
+    public float couldownEspejo = 5f;
+    private bool couldown = false;
 
 
     void Start()
@@ -36,7 +36,18 @@ public class UtilidadDeEspejo: MonoBehaviour
 
     void Update()
     {
-        if (Mouse.current.rightButton.isPressed)
+        if (couldown)
+        {
+            couldownEspejo -= Time.deltaTime;
+            if (couldownEspejo <= couldownLimite)
+            {
+                couldown = false;
+                couldownEspejo = 0f;
+            }
+        }
+
+
+        if (!couldown && Mouse.current.rightButton.isPressed)
         {
             espejo1.localPosition = newPositionEspejo1;
             espejo1.localRotation = Quaternion.Euler(newRotationEspejo1);
@@ -46,25 +57,31 @@ public class UtilidadDeEspejo: MonoBehaviour
         {
             espejo1.localPosition = originalPositionEspejo1;
             espejo1.localRotation = originalRotationEspejo1;
-            temporizadorEspejo = 0f;
+            if (!activadoJumpScare)
+            {
+                temporizadorEspejo = 0f;
+            }
+                
         }
 
-        if (temporizadorEspejo >= tiempoLimiteEspejo)
+        if (temporizadorEspejo >= tiempoLimiteEspejo || activadoJumpScare == false)
         {
             activadoJumpScare = true;
             if (temporizadorEspejo >= tiempoLimiteEspejo)
             {
                 negro.SetActive(true);
                 temporizadorJumpScare += Time.deltaTime;
-
+                temporizadorEspejo = 3f;
+                couldown = true;
             }
-
             if (temporizadorJumpScare >= limiteJumpScare)
             {
                 negro.SetActive(false);
+                temporizadorJumpScare = 0f;
+                activadoJumpScare = false;
+                temporizadorEspejo = 0f;
+                
             }
-
-            temporizadorEspejo += Time.deltaTime;
 
         }
         else
