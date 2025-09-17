@@ -20,6 +20,13 @@ public class Movimiento : MonoBehaviour
     public float staminaDism = 10f; //Disminucion de estamina
     public float staminaRegen = 5f; //Aumento de estamina
 
+    //Movimiento de camara con mouse
+
+    public Camera playerCamera;
+    public float mouseSensitivity = 0.2f;
+    private float xRotation = 0f;
+
+
     void Awake()
     {
         //Movimiento y correr
@@ -28,6 +35,11 @@ public class Movimiento : MonoBehaviour
 
         //Resistencia
         stamina = maxStamina;
+
+        //Movimiento de camara con mouse
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +49,18 @@ public class Movimiento : MonoBehaviour
     }
 
     // Update is called once per frame
+    void Update()
+    {
+        Vector2 mouseDelta = Mouse.current.delta.ReadValue() * mouseSensitivity;
+
+        xRotation -= mouseDelta.y;
+        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
+        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        transform.Rotate(Vector3.up * mouseDelta.x);
+    }
+
+
     void FixedUpdate()
     {
 
@@ -57,7 +81,7 @@ public class Movimiento : MonoBehaviour
             if (stamina > maxStamina) stamina = maxStamina;
         }
 
-        Vector3 move = new Vector3(moveInput.x, 0, moveInput.y);
+        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
         if (move.magnitude > 1f) move.Normalize();
 
         rb.MovePosition(rb.position + move * currentSpeed * Time.fixedDeltaTime);
