@@ -270,6 +270,8 @@ MonoBehaviour:
   stamina: 0
   staminaDism: 10
   staminaRegen: 5
+  playerCamera: {fileID: 1939573963}
+  mouseSensitivity: 200
 --- !u!114 &599781949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -416,7 +418,8 @@ Transform:
   m_LocalPosition: {x: 0.92192, y: 1.54, z: 4.99333}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1939573964}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1520084231
@@ -744,13 +747,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1939573961}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.29986778, y: -0, z: -0, w: 0.9539808}
-  m_LocalPosition: {x: 2.9, y: 7.6, z: -15.6}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 34.899, y: 0, z: 0}
+  m_Father: {fileID: 599781954}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1939573965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +802,6 @@ MonoBehaviour:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1939573964}
   - {fileID: 1691896093}
   - {fileID: 1520084235}
   - {fileID: 586201403}
