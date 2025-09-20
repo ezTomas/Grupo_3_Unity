@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
+using UnityEditor.Build.Content;
 
 public class enemigo : MonoBehaviour
 {
     public Transform jugador;
+    public static GameManagerDependencyInfo player;
     public int modo;
     public float cronometro;
     private float grado;
@@ -47,12 +49,12 @@ public class enemigo : MonoBehaviour
                 colision = true;
                 modo++;
                 break;
-                /*case 2:
+                case 2:
                     colision = false;
                     transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
                     transform.Translate(Vector3.forward * 1 * Time.deltaTime);
                     break;
-                */
+                
         }
     }
     private void OnTriggerEnter(Collider other)
