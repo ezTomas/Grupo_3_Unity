@@ -8,7 +8,6 @@ using UnityEditor.Build.Content;
 public class enemigo : MonoBehaviour
 {
     public Transform jugador;
-    public static GameManagerDependencyInfo player;
     public int modo;
     public float cronometro;
     private float grado;
@@ -20,7 +19,15 @@ public class enemigo : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        if (jugador == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+            {
+                jugador = player.transform;
+            }
+            Debug.Log("h");
+        }
     }
 
     // Update is called once per frame
