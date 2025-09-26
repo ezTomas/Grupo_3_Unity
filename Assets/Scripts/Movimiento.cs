@@ -55,7 +55,7 @@ public class Movimiento : MonoBehaviour
 
         xRotation -= mouseDelta.y;
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
-        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 180f, 0f);
 
         transform.Rotate(Vector3.up * mouseDelta.x);
     }
