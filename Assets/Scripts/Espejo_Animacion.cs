@@ -17,7 +17,7 @@ public class UtilidadDeEspejo : MonoBehaviour
 
     private bool activadoJumpScare = false;
     public float temporizadorEspejo = 0f;
-    private float tiempoLimiteEspejo = 2f;
+    private float tiempoLimiteEspejo = 20f;
 
     public float temporizadorJumpScare = 0f;
     private float limiteJumpScare = 2f;
