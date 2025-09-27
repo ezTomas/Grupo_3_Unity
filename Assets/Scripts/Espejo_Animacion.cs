@@ -5,86 +5,45 @@ using UnityEngine.Rendering;
 public class UtilidadDeEspejo : MonoBehaviour
 {
     public Transform espejo1;
+    [Header("Original Position")]
+    public Vector3 originalPositionEspejo1;
+    public Quaternion originalRotationEspejo1;
 
-    private Vector3 originalPositionEspejo1;
-    private Quaternion originalRotationEspejo1;
-
-    [Header("Nueva posición y rotación")]
-    public Vector3 newPositionEspejo1;
-    public Vector3 newRotationEspejo1;
-
-    public GameObject negro;
-
-    private bool activadoJumpScare = false;
-    public float temporizadorEspejo = 0f;
-    private float tiempoLimiteEspejo = 20f;
-
-    public float temporizadorJumpScare = 0f;
-    private float limiteJumpScare = 2f;
-
-    private float couldownLimite = 0f;
-    public float couldownEspejo = 7f;
-    private bool couldown = false;
+    private Couldown_Espejo couldown;
+    [Header("Nueva posición y rotación Mirar Atras")]
+    public Vector3 positionEspejoAtras;
+    public Vector3 rotationEspejoAtras;
+    [Header("Nueva posición y rotación Linterna")]
+    public Vector3 positionEspejoLinterna;
+    public Vector3 rotationEspejoLinterna;
 
 
     void Start()
     {
         originalPositionEspejo1 = espejo1.localPosition;
-        negro.SetActive(false);
-
+        couldown = GetComponent<Couldown_Espejo>();
     }
 
     void Update()
     {
-
-        if (couldown)
+        if (!couldown.couldown && Mouse.current.rightButton.isPressed)
         {
-            couldownEspejo -= Time.deltaTime;
-            if (couldownEspejo <= 0f)
-            {
-                couldown = false;
-                couldownEspejo = 30f;
-            }
+            espejo1.localPosition = positionEspejoAtras;
+            espejo1.localRotation = Quaternion.Euler(rotationEspejoAtras);
+
         }
 
-
-        if (!couldown && Mouse.current.rightButton.isPressed)
+        else if (!couldown.couldown && Mouse.current.leftButton.isPressed)
         {
-            espejo1.localPosition = newPositionEspejo1;
-            espejo1.localRotation = Quaternion.Euler(newRotationEspejo1);
-            temporizadorEspejo += Time.deltaTime;
+            espejo1.localPosition = positionEspejoLinterna;
+            espejo1.localRotation = Quaternion.Euler(rotationEspejoLinterna);
         }
+
         else
         {
             espejo1.localPosition = originalPositionEspejo1;
             espejo1.localRotation = originalRotationEspejo1;
-
-
-            if (!activadoJumpScare)
-            {
-                temporizadorEspejo = 0f;
-            }
-        }
-
-        if (temporizadorEspejo >= tiempoLimiteEspejo && !activadoJumpScare && !couldown)
-        {
-            activadoJumpScare = true;
-            negro.SetActive(true);
-            temporizadorJumpScare = 0f;
-            couldown = true;
-        }
-
-
-        if (activadoJumpScare)
-        {
-            temporizadorJumpScare += Time.deltaTime;
-
-            if (temporizadorJumpScare >= limiteJumpScare)
-            {
-                negro.SetActive(false);
-                activadoJumpScare = false;
-                temporizadorEspejo = 0f;
-            }
         }
     }
 }
+
