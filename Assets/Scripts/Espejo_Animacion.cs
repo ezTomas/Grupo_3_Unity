@@ -17,6 +17,8 @@ public class UtilidadDeEspejo : MonoBehaviour
     public Vector3 positionEspejoLinterna;
     public Vector3 rotationEspejoLinterna;
 
+    public bool usoLinterna = false;
+
 
     void Start()
     {
@@ -37,12 +39,14 @@ public class UtilidadDeEspejo : MonoBehaviour
         {
             espejo1.localPosition = positionEspejoLinterna;
             espejo1.localRotation = Quaternion.Euler(rotationEspejoLinterna);
+            usoLinterna = true;
         }
 
         else
         {
             espejo1.localPosition = originalPositionEspejo1;
             espejo1.localRotation = originalRotationEspejo1;
+            usoLinterna = false;
         }
     }
 }
