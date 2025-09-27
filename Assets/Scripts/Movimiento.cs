@@ -70,6 +70,11 @@ public class Movimiento : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         transform.Rotate(Vector3.up * mouseDelta.x);
+
+        if (staminaBar != null)
+        {
+            staminaBar.value = stamina; 
+        }
     }
 
 
