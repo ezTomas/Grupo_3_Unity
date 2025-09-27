@@ -81,22 +81,21 @@ public class Movimiento : MonoBehaviour
     void FixedUpdate()
     {
 
-        bool isRunning = Keyboard.current.shiftKey.isPressed && stamina > 0f;
+        bool wantsToRun = Keyboard.current.shiftKey.isPressed;
 
-        currentSpeed = isRunning ? runSpeed : walkSpeed;
-
-        if (isRunning)
+        if (wantsToRun && stamina > 0f)
         {
             stamina -= staminaDism * Time.fixedDeltaTime;
             if (stamina < 0f) stamina = 0f;
-
         }
-
         else
         {
             stamina += staminaRegen * Time.fixedDeltaTime;
             if (stamina > maxStamina) stamina = maxStamina;
         }
+
+        bool canRun = wantsToRun && stamina > 0f;
+        currentSpeed = canRun ? runSpeed : walkSpeed;
 
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
         if (move.magnitude > 1f) move.Normalize();
