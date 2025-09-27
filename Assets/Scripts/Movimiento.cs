@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.UI;
 
 
 public class Movimiento : MonoBehaviour
@@ -26,6 +26,9 @@ public class Movimiento : MonoBehaviour
     public float mouseSensitivity = 0.2f;
     private float xRotation = 0f;
 
+    //Estamina
+
+    public Slider staminaBar;
 
     void Awake()
     {
