@@ -43,6 +43,15 @@ public class Movimiento : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        //Inicio de la barra 
+
+        if (staminaBar != null)
+        {
+            staminaBar.maxValue = maxStamina;
+            staminaBar.value = stamina; 
+        }
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
