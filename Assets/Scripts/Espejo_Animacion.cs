@@ -18,31 +18,58 @@ public class UtilidadDeEspejo : MonoBehaviour
     public Vector3 rotationEspejoLinterna;
 
     public bool usoLinterna = false;
-
+    private bool dentroTrigger = false;
 
     void Start()
     {
         originalPositionEspejo1 = espejo1.localPosition;
+        originalRotationEspejo1 = espejo1.localRotation;
         couldown = GetComponent<Couldown_Espejo>();
     }
 
     void Update()
     {
+        if (dentroTrigger) return;
+
         if (!couldown.couldown && Mouse.current.rightButton.isPressed)
         {
             espejo1.localPosition = positionEspejoAtras;
             espejo1.localRotation = Quaternion.Euler(rotationEspejoAtras);
-
         }
-
-        else if (!couldown.couldown && Mouse.current.leftButton.isPressed)
-        {
-            espejo1.localPosition = positionEspejoLinterna;
-            espejo1.localRotation = Quaternion.Euler(rotationEspejoLinterna);
-            usoLinterna = true;
-        }
-
         else
+        {
+            espejo1.localPosition = originalPositionEspejo1;
+            espejo1.localRotation = originalRotationEspejo1;
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Laberinto"))
+
+        {
+
+            dentroTrigger = true;
+
+            if (!couldown.couldown && Mouse.current.leftButton.isPressed)
+            {
+                espejo1.localPosition = positionEspejoLinterna;
+                espejo1.localRotation = Quaternion.Euler(rotationEspejoLinterna);
+                usoLinterna = true;
+            }
+            else
+            {
+                espejo1.localPosition = originalPositionEspejo1;
+                espejo1.localRotation = originalRotationEspejo1;
+                usoLinterna = false;
+                dentroTrigger = false;
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Laberinto"))
         {
             espejo1.localPosition = originalPositionEspejo1;
             espejo1.localRotation = originalRotationEspejo1;

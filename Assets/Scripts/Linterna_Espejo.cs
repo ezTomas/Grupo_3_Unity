@@ -12,11 +12,12 @@ public class Linterna_Espejo : MonoBehaviour
     private void Start()
     {
         utilidadDeEspejo = GetComponent<UtilidadDeEspejo>();
+        luzLinterna.enabled = false;
     }
 
     private void Update()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame && utilidadDeEspejo.usoLinterna == true)
+        if (Mouse.current.leftButton.isPressed && utilidadDeEspejo.usoLinterna == true)
         {
             linternaActiva = !linternaActiva;
 
