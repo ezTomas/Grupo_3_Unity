@@ -7,29 +7,26 @@ public class Linterna_Espejo : MonoBehaviour
     public bool linternaActiva;
 
     private UtilidadDeEspejo utilidadDeEspejo;
+    private ItemSwitch estaSeleccionado;
 
 
     private void Start()
     {
         utilidadDeEspejo = GetComponent<UtilidadDeEspejo>();
+        estaSeleccionado = GetComponent<ItemSwitch>();
         luzLinterna.enabled = false;
     }
 
     private void Update()
     {
-        if (Mouse.current.leftButton.isPressed && utilidadDeEspejo.usoLinterna == true)
+        if (Mouse.current.leftButton.isPressed && utilidadDeEspejo.usoLinterna == true && estaSeleccionado.seleccionado == true)
         {
-            linternaActiva = !linternaActiva;
+            luzLinterna.enabled = true;
 
-            if (linternaActiva == true)
-            {
-                luzLinterna.enabled = true;
-            }
-
-            if (linternaActiva == false)
-            {
-                luzLinterna.enabled = false;
-            }
+        }
+        else
+        {
+            luzLinterna.enabled = false;
         }
 
     }

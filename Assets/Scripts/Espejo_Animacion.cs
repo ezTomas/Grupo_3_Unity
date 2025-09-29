@@ -17,7 +17,7 @@ public class UtilidadDeEspejo : MonoBehaviour
     public Vector3 positionEspejoLinterna;
     public Vector3 rotationEspejoLinterna;
 
-    public bool usoLinterna = false;
+    public bool usoLinterna;
     private bool dentroTrigger = false;
 
     void Start()
@@ -45,26 +45,25 @@ public class UtilidadDeEspejo : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.CompareTag("Laberinto"))
-
-        {
-
-            dentroTrigger = true;
-
-            if (!couldown.couldown && Mouse.current.leftButton.isPressed)
+            if (other.gameObject.CompareTag("Laberinto"))
             {
-                espejo1.localPosition = positionEspejoLinterna;
-                espejo1.localRotation = Quaternion.Euler(rotationEspejoLinterna);
+                dentroTrigger = true;
                 usoLinterna = true;
-            }
-            else
-            {
-                espejo1.localPosition = originalPositionEspejo1;
-                espejo1.localRotation = originalRotationEspejo1;
-                usoLinterna = false;
-                dentroTrigger = false;
-            }
+
+                if (!couldown.couldown && Mouse.current.leftButton.isPressed)
+                {
+                    espejo1.localPosition = positionEspejoLinterna;
+                    espejo1.localRotation = Quaternion.Euler(rotationEspejoLinterna);
+
+                }
+                else
+                {
+                    espejo1.localPosition = originalPositionEspejo1;
+                    espejo1.localRotation = originalRotationEspejo1;
+                    dentroTrigger = false;
+                }            
         }
+
     }
 
     private void OnTriggerExit(Collider other)
