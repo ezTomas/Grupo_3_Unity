@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using UnityEngine.UI;
 
 
 public class Movimiento : MonoBehaviour
@@ -26,6 +26,9 @@ public class Movimiento : MonoBehaviour
     public float mouseSensitivity = 0.2f;
     private float xRotation = 0f;
 
+    //Estamina
+
+    public Slider staminaBar;
 
     void Awake()
     {
@@ -40,6 +43,15 @@ public class Movimiento : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        //Inicio de la barra 
+
+        if (staminaBar != null)
+        {
+            staminaBar.maxValue = maxStamina;
+            staminaBar.value = stamina; 
+        }
+
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -58,28 +70,32 @@ public class Movimiento : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 180f, 0f);
 
         transform.Rotate(Vector3.up * mouseDelta.x);
+
+        if (staminaBar != null)
+        {
+            staminaBar.value = stamina; 
+        }
     }
 
 
     void FixedUpdate()
     {
 
-        bool isRunning = Keyboard.current.shiftKey.isPressed && stamina > 0f;
+        bool wantsToRun = Keyboard.current.shiftKey.isPressed;
 
-        currentSpeed = isRunning ? runSpeed : walkSpeed;
-
-        if (isRunning)
+        if (wantsToRun && stamina > 0f)
         {
             stamina -= staminaDism * Time.fixedDeltaTime;
             if (stamina < 0f) stamina = 0f;
-
         }
-
         else
         {
             stamina += staminaRegen * Time.fixedDeltaTime;
             if (stamina > maxStamina) stamina = maxStamina;
         }
+
+        bool canRun = wantsToRun && stamina > 0f;
+        currentSpeed = canRun ? runSpeed : walkSpeed;
 
         Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
         if (move.magnitude > 1f) move.Normalize();
