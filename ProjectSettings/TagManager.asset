@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Objetos
+  - Laberinto
+  - Pared_Destroy
   layers:
   - Default
   - TransparentFX
