@@ -37,6 +37,7 @@ public class ItemSwitch : MonoBehaviour
         if (Keyboard.current.digit1Key.wasPressedThisFrame)
         {
             SelectItem(1);
+            seleccionado = true;
         }
             
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
