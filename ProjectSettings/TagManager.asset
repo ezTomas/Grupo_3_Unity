@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Laberinto
   - Pared_Destroy
+  - Enemy
   layers:
   - Default
   - TransparentFX
