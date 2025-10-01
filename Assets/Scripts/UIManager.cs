@@ -10,6 +10,12 @@ public class UIManager : MonoBehaviour
 
     private List<string> numerosEncontrados = new List<string>();
 
+    public List<string> ObtenerNumeros()
+    {
+        return numerosEncontrados;
+    }
+
+
     private void Awake()
     {
         if (Instance == null) 
