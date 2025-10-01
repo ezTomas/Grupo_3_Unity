@@ -53,11 +53,11 @@ public class enemigo : MonoBehaviour
                 angulo = Quaternion.Euler(0, grado, 0);
                 int pos = Random.Range(-90, 90);
                 transform.position = new Vector3(Random.Range(jugador.position.x + 30, pos), 2, Random.Range(jugador.position.z + 30, pos));
-                colision = true;
+                
                 modo++;
                 break;
             case 2:
-                colision = false;
+                
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
                 transform.Translate(Vector3.forward * 1 * Time.deltaTime * 10);
                 break;
@@ -65,7 +65,7 @@ public class enemigo : MonoBehaviour
 
         }
     }
-    private void OnTriggerEnter(Collider other)
+  /*  private void OnTriggerEnter(Collider other)
     {
         if (colision == true)
         {
@@ -91,5 +91,5 @@ public class enemigo : MonoBehaviour
             }
 
         }
-    }
+    }*/
 }
