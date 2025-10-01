@@ -51,26 +51,26 @@ public class enemigo : MonoBehaviour
             case 1:
                 grado = Random.Range(0, 360);
                 angulo = Quaternion.Euler(0, grado, 0);
-                int pos = Random.Range(-30, 30);
-                transform.position = new Vector3(Random.Range(jugador.position.x + 10, pos), 0, Random.Range(jugador.position.z + 10, pos));
-                colision = true;
+                int pos = Random.Range(-90, 90);
+                transform.position = new Vector3(Random.Range(jugador.position.x + 30, pos), 2, Random.Range(jugador.position.z + 30, pos));
+                
                 modo++;
                 break;
             case 2:
-                colision = false;
+                
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
-                transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+                transform.Translate(Vector3.forward * 1 * Time.deltaTime * 10);
                 break;
 
 
         }
     }
-    private void OnTriggerEnter(Collider other)
+  /*  private void OnTriggerEnter(Collider other)
     {
         if (colision == true)
         {
-            int pos = Random.Range(-30, 30);
-            transform.position = new Vector3(Random.Range(jugador.position.x, pos), 0, Random.Range(jugador.position.z, pos));
+            int pos = Random.Range(-90, 90);
+            transform.position = new Vector3(Random.Range(jugador.position.x, pos), 2, Random.Range(jugador.position.z, pos));
 
             Debug.Log("oli");
 
@@ -85,11 +85,11 @@ public class enemigo : MonoBehaviour
 
             if (other.CompareTag("objetos"))
             {
-                int posx = Random.Range(-30, 30);
-                transform.position = new Vector3(Random.Range(jugador.position.x, posx), 0, Random.Range(jugador.position.z, posx));
+                int posx = Random.Range(-90, 90);
+                transform.position = new Vector3(Random.Range(jugador.position.x, posx), 2, Random.Range(jugador.position.z, posx));
                 Debug.Log("hola");
             }
 
         }
-    }
+    }*/
 }
