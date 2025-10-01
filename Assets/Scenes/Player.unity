@@ -976,6 +976,7 @@ MonoBehaviour:
   staminaRegen: 5
   playerCamera: {fileID: 1939573963}
 
+
   mouseSensitivity: 0.2
 
   staminaBar: {fileID: 1291591936}
@@ -1151,6 +1152,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ClickTransform
   espejo1: {fileID: 1495016877}
 
+  newPositionEspejo1: {x: 0.624, y: 0.1600001, z: -0.847}
+  newRotationEspejo1: {x: 0, y: 270, z: 0}
+  negro: {fileID: 1711857571}
+  temporizadorEspejo: 0
+  temporizadorJumpScare: 0
+  couldownEspejo: 7
+
+
   originalPositionEspejo1: {x: 0, y: 0, z: 0}
   originalRotationEspejo1: {x: 0, y: 0, z: 0.6556308, w: 0.7550816}
   positionEspejoAtras: {x: 0.624, y: -0.07, z: 0.845}
@@ -1158,6 +1167,7 @@ MonoBehaviour:
   positionEspejoLinterna: {x: 0.624, y: -0.07, z: 0.845}
   rotationEspejoLinterna: {x: -0.298, y: -84.334, z: 17.026}
   usoLinterna: 0
+
 
 --- !u!114 &599781956
 MonoBehaviour:
