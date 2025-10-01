@@ -59,7 +59,7 @@ public class enemigo : MonoBehaviour
             case 2:
                 colision = false;
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
-                transform.Translate(Vector3.forward * 1 * Time.deltaTime);
+                transform.Translate(Vector3.forward * 1 * Time.deltaTime * 10);
                 break;
 
 
