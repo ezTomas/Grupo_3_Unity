@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
-using UnityEditor.Build.Content;
 
 public class enemigo : MonoBehaviour
 {
