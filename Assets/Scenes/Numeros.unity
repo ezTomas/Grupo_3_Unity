@@ -336,7 +336,7 @@ Transform:
   m_GameObject: {fileID: 774869584}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 367.26984, y: 0, z: 109.51199}
+  m_LocalPosition: {x: -1, y: -19.9, z: 14.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -356,8 +356,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   codigoCorrecto: 8364
   intentosMaximos: 4
-  uiManager: {fileID: 0}
-  puerta: {fileID: 0}
+  uiManager: {fileID: 1846047630}
+  puerta: {fileID: 1220979511}
   pantallaDerrota: {fileID: 0}
   pantallaVictoria: {fileID: 0}
 --- !u!1 &1138827812
