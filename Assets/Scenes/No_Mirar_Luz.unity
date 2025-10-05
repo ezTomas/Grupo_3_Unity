@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 1528964765}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1431,6 +1431,7 @@ GameObject:
   - component: {fileID: 2101782957}
   - component: {fileID: 2101782956}
   - component: {fileID: 2101782955}
+  - component: {fileID: 2101782965}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1453,6 +1454,7 @@ MonoBehaviour:
   Espejo: {fileID: 1477285564}
   Celular: {fileID: 1378739939}
   startIndex: 2
+  seleccionado: 0
 --- !u!114 &2101782956
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1466,12 +1468,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ClickTransform
   espejo1: {fileID: 1477285565}
-  newPositionEspejo1: {x: 0.624, y: 0.1600001, z: -0.847}
-  newRotationEspejo1: {x: 0, y: 270, z: 0}
-  negro: {fileID: 1396277405}
-  temporizadorEspejo: 0
-  temporizadorJumpScare: 0
-  couldownEspejo: 7
+  originalPositionEspejo1: {x: 0, y: 0, z: 0}
+  originalRotationEspejo1: {x: 0, y: 0, z: 0, w: 0}
+  positionEspejoAtras: {x: 0, y: 0, z: 0}
+  rotationEspejoAtras: {x: 0, y: 0, z: 0}
+  positionEspejoLinterna: {x: 0, y: 0, z: 0}
+  rotationEspejoLinterna: {x: 0, y: 0, z: 0}
+  usoLinterna: 0
 --- !u!114 &2101782957
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1492,6 +1495,7 @@ MonoBehaviour:
   staminaRegen: 5
   playerCamera: {fileID: 78473385}
   mouseSensitivity: 0.1
+  staminaBar: {fileID: 0}
 --- !u!114 &2101782958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1660,6 +1664,23 @@ MonoBehaviour:
   rayDistance: 60
   gameOver: {fileID: 954716426}
   tiempoLimite: 3
+--- !u!114 &2101782965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2101782954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b73d5544691267846bff12a955f38cfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Couldown_Espejo
+  negro: {fileID: 1396277405}
+  temporizadorEspejo: 0
+  temporizadorJumpScare: 0
+  couldownEspejo: 30
+  couldown: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

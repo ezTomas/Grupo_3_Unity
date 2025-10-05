@@ -7,7 +7,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float rayDistance;
     public GameObject gameOver;
 
-    public float tiempoLimite = 3f;
+    public float tiempoLimite = 1f;
     void Start()
     {
         camera = transform.Find("Main Camera");
@@ -31,7 +31,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         }
         else
         {
-            tiempoLimite = 3f;
+            tiempoLimite = 1f;
         }
     }
 }
