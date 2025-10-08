@@ -7,6 +7,8 @@ TagManager:
   - Laberinto
   - Pared_Destroy
   - Enemy
+  - 83
+  - 64
   layers:
   - Default
   - TransparentFX
