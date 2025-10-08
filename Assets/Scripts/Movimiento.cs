@@ -85,7 +85,7 @@ public class Movimiento : MonoBehaviour
 
         if (wantsToRun && stamina > 0f)
         {
-            stamina -= staminaDism * Time.fixedDeltaTime;
+            stamina -= staminaDism * Time.deltaTime;
             if (stamina < 0f) stamina = 0f;
         }
         else
