@@ -6,12 +6,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private Transform camera;
     public float rayDistance;
     public GameObject gameOver;
+    private CanvasGroup canvasGroup;
 
-    public float tiempoLimite = 1f;
+    public float tiempoLimite = 0f;
     void Start()
     {
         camera = transform.Find("Main Camera");
-        gameOver.SetActive(false);
+        canvasGroup = gameOver.GetComponent<CanvasGroup>();
+        canvasGroup.alpha = 0;
     }
 
     void Update()
@@ -20,18 +22,21 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(camera.position,camera.forward, out hit, rayDistance, LayerMask.GetMask("Enemy"))) 
+        if (Physics.Raycast(camera.position, camera.forward, out hit, rayDistance, LayerMask.GetMask("Enemy")))
         {
-            tiempoLimite -= Time.deltaTime;
-            if (tiempoLimite <= 0)
+
+            tiempoLimite += Time.deltaTime;
+            canvasGroup.alpha += Time.deltaTime;
+
+            if (tiempoLimite >= 1)
             {
-                gameOver.SetActive(true);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
         else
         {
-            tiempoLimite = 1f;
+            canvasGroup.alpha = 0;
+            tiempoLimite = 0f;
         }
     }
 }
