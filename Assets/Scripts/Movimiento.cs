@@ -30,12 +30,17 @@ public class Movimiento : MonoBehaviour
 
     public Slider staminaBar;
 
+
+    float velocidad = 25f;
+    CharacterController controller;
+
     void Awake()
     {
+        controller = GetComponent<CharacterController>();
         //Movimiento y correr
-        rb = GetComponent<Rigidbody>();
+        /* rb = GetComponent<Rigidbody>();
         currentSpeed = walkSpeed;
-
+        */
         //Resistencia
         stamina = maxStamina;
 
@@ -51,6 +56,8 @@ public class Movimiento : MonoBehaviour
             staminaBar.maxValue = maxStamina;
             staminaBar.value = stamina; 
         }
+
+
 
     }
 
@@ -69,15 +76,38 @@ public class Movimiento : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
         playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 180f, 0f);
 
+        Vector3 movementInput = Vector3.zero;
+        if (Input.GetKey(KeyCode.W))
+        {
+            movementInput.z = 1;
+
+        }
+        else if (Input.GetKey(KeyCode.S))
+        {
+            movementInput.z = -1;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            movementInput.x = 1;
+        }
+        else if (Input.GetKey(KeyCode.A))
+        {
+            movementInput.x = -1;
+        }
+        Move(movementInput);
+
+
+        /*
         transform.Rotate(Vector3.up * mouseDelta.x);
 
         if (staminaBar != null)
         {
             staminaBar.value = stamina; 
         }
+        */
     }
 
-
+    /*
     void FixedUpdate()
     {
 
@@ -101,10 +131,30 @@ public class Movimiento : MonoBehaviour
         if (move.magnitude > 1f) move.Normalize();
 
         rb.MovePosition(rb.position + move * currentSpeed * Time.fixedDeltaTime);
-    }
+    }*/
 
-    public void OnMove(InputValue value)
+    /*public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
+    }*/
+
+
+
+
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    // Update is called once per frame
+   
+    private void Move(Vector3 Direccion)
+    {
+        controller.SimpleMove(Direccion.normalized * velocidad);
     }
 }
+
+
+
+
+
+

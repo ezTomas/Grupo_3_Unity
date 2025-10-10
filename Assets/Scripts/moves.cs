@@ -12,7 +12,7 @@ public class moves : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,8 +32,8 @@ public class moves : MonoBehaviour
         {
             movementInput.x = 1;
         }
-        else if (Input.GetKey(KeyCode.A)) 
-        { 
+        else if (Input.GetKey(KeyCode.A))
+        {
             movementInput.x = -1;
         }
         Move(movementInput);
