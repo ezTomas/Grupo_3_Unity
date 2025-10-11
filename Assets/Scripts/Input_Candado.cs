@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Input_Candado : MonoBehaviour
 {
-    public Canvas GameObject;
+    public GameObject GameObject;
     private string input;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +15,7 @@ public class Input_Candado : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
-            GameObject.enabled = false;
+            GameObject.SetActive(false);
         }
 
     }
@@ -24,7 +24,12 @@ public class Input_Candado : MonoBehaviour
     public void leerinput(string t)
     {
         input = t;
-        Debug.Log(input);
+        if (t == "8364")
+        {
+            GameObject.SetActive(false);
+            Application.Quit();
+            Debug.Log("chau");
+        }
     }
 }
 
