@@ -16,7 +16,7 @@ public class Movimiento : MonoBehaviour
     //Resistencia
 
     public float maxStamina = 50f;
-    public float stamina;
+    public float stamina = 25;
     public float staminaDism = 10f; //Disminucion de estamina
     public float staminaRegen = 5f; //Aumento de estamina
 
@@ -31,8 +31,9 @@ public class Movimiento : MonoBehaviour
     public Slider staminaBar;
 
 
-    float velocidad = 25f;
+    public float velocidad = 15f;
     CharacterController controller;
+    public bool cooldawn_stamina = false;
 
     void Awake()
     {
@@ -96,15 +97,61 @@ public class Movimiento : MonoBehaviour
         }
         Move(movementInput);
 
+        correr();
+        recarga_stamina();
+        cooldawn();
+        Debug.Log(stamina);
 
-        
+
+
+
         transform.Rotate(Vector3.up * mouseDelta.x);
-        /*
+        
         if (staminaBar != null)
         {
             staminaBar.value = stamina; 
         }
-        */
+        
+    }
+
+    private void correr()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && stamina >=1 && cooldawn_stamina == false) 
+        {
+            velocidad = 25f;
+            stamina -= staminaDism * Time.fixedDeltaTime;
+        }
+        else
+        {
+            velocidad = 15f;
+
+        }
+    }
+
+    private void recarga_stamina()
+    {
+        if (stamina < 25)
+        {
+            stamina += 2 * Time.fixedDeltaTime;
+        }
+    }
+
+    private void cooldawn()
+    {
+        if (stamina <= 0)
+        {
+            cooldawn_stamina = true;
+
+        }
+        else
+        {
+            cooldawn_stamina = false;
+        }
+
+    }
+    private void Move(Vector3 Direccion)
+    {
+        controller.SimpleMove(Direccion.normalized * velocidad);
     }
 
     /*
@@ -147,10 +194,7 @@ public class Movimiento : MonoBehaviour
 
     // Update is called once per frame
 
-    private void Move(Vector3 Direccion)
-    {
-        controller.SimpleMove(Direccion.normalized * velocidad);
-    }
+
 }
 
 
