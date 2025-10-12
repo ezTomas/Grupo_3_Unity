@@ -28,7 +28,7 @@ public class Input_Candado : MonoBehaviour
         {
             GameObject.SetActive(false);
             Application.Quit();
-            Debug.Log("chau");
+            
         }
     }
 }

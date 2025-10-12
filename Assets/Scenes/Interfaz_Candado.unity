@@ -1062,6 +1062,7 @@ GameObject:
   - component: {fileID: 1431284601}
   - component: {fileID: 1431284600}
   - component: {fileID: 1431284599}
+  - component: {fileID: 1431284602}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -1193,7 +1194,7 @@ MonoBehaviour:
   m_ReadOnly: 0
   m_RichText: 1
   m_GlobalFontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_OnFocusSelectAll: 1
+  m_OnFocusSelectAll: 0
   m_ResetOnDeActivation: 1
   m_KeepTextSelectionVisible: 0
   m_RestoreOriginalTextOnEscape: 1
@@ -1240,6 +1241,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431284597}
   m_CullTransparentMesh: 1
+--- !u!114 &1431284602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431284597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2ebeb8f110476409d9ce9c4da202f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Autoselect
+  seleccion: {fileID: 1431284599}
 --- !u!1 &2078297821
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ TagManager:
   - Laberinto
   - Pared_Destroy
   - Enemy
+  - Interaccion_candado
   layers:
   - Default
   - TransparentFX

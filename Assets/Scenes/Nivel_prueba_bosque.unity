@@ -8272,6 +8272,7 @@ GameObject:
   - component: {fileID: 1620850021}
   - component: {fileID: 1620850012}
   - component: {fileID: 1620850011}
+  - component: {fileID: 1620850022}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -8533,6 +8534,19 @@ MonoBehaviour:
   rayDistance: 60
   gameOver: {fileID: 1503772546}
   tiempoLimite: 1
+--- !u!114 &1620850022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620850009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 658f0f084d711714e9d5a2bb64d5b3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Input_Candado
+  GameObject: {fileID: 0}
 --- !u!1001 &1621119139
 PrefabInstance:
   m_ObjectHideFlags: 0
