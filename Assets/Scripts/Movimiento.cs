@@ -77,29 +77,29 @@ public class Movimiento : MonoBehaviour
         playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 180f, 0f);
 
         Vector3 movementInput = Vector3.zero;
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.S))
         {
             movementInput.z = 1;
 
         }
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.W))
         {
             movementInput.z = -1;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.A))
         {
             movementInput.x = 1;
         }
-        else if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKey(KeyCode.D))
         {
             movementInput.x = -1;
         }
         Move(movementInput);
 
 
-        /*
+        
         transform.Rotate(Vector3.up * mouseDelta.x);
-
+        /*
         if (staminaBar != null)
         {
             staminaBar.value = stamina; 
@@ -146,7 +146,7 @@ public class Movimiento : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     // Update is called once per frame
-   
+
     private void Move(Vector3 Direccion)
     {
         controller.SimpleMove(Direccion.normalized * velocidad);
