@@ -16,7 +16,7 @@ public class Movimiento : MonoBehaviour
     //Resistencia
 
     public float maxStamina = 50f;
-    public float stamina;
+    public float stamina = 25;
     public float staminaDism = 10f; //Disminucion de estamina
     public float staminaRegen = 5f; //Aumento de estamina
 
@@ -30,19 +30,26 @@ public class Movimiento : MonoBehaviour
 
     public Slider staminaBar;
 
+
+    public float velocidad = 15f;
+    public CharacterController controller;
+    public bool cooldawn_stamina = false;
+
+
     void Awake()
     {
+        controller = GetComponent<CharacterController>();
         //Movimiento y correr
-        rb = GetComponent<Rigidbody>();
+        /* rb = GetComponent<Rigidbody>();
         currentSpeed = walkSpeed;
-
+        */
         //Resistencia
         stamina = maxStamina;
 
         //Movimiento de camara con mouse
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        /*Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;*/
 
         //Inicio de la barra 
 
@@ -51,6 +58,8 @@ public class Movimiento : MonoBehaviour
             staminaBar.maxValue = maxStamina;
             staminaBar.value = stamina; 
         }
+
+
 
     }
 
@@ -63,21 +72,77 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         Vector2 mouseDelta = Mouse.current.delta.ReadValue() * mouseSensitivity;
 
         xRotation -= mouseDelta.y;
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
         playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 180f, 0f);
+        */
+        float movimientoX = Input.GetAxis("Horizontal");
+        float movimientoZ = Input.GetAxis("Vertical");
 
+        Vector3 movimiento = transform.right * movimientoX + transform.forward * movimientoZ;
+
+        correr();
+        recarga_stamina();
+        cooldawn();
+        Vector3 mover = transform.right * movimientoX + transform.forward * movimientoZ;
+
+        controller.Move(mover * velocidad * Time.deltaTime);
+
+
+        /*
         transform.Rotate(Vector3.up * mouseDelta.x);
-
+        */
         if (staminaBar != null)
         {
             staminaBar.value = stamina; 
         }
+        
     }
 
+    private void correr()
+    {
+        if (Input.GetKey(KeyCode.LeftShift) && stamina >=1 && cooldawn_stamina == false) 
+        {
+            velocidad = 25f;
+            stamina -= staminaDism * Time.fixedDeltaTime;
+        }
+        else
+        {
+            velocidad = 15f;
 
+        }
+    }
+
+    private void recarga_stamina()
+    {
+        if (stamina < 25)
+        {
+            stamina += 2 * Time.fixedDeltaTime;
+        }
+    }
+
+    private void cooldawn()
+    {
+        if (stamina <= 0)
+        {
+            cooldawn_stamina = true;
+
+        }
+        else
+        {
+            cooldawn_stamina = false;
+        }
+
+    }
+    private void Move(Vector3 Direccion)
+    {
+        controller.SimpleMove(Direccion.normalized * velocidad);
+    }
+
+    /*
     void FixedUpdate()
     {
 
@@ -101,10 +166,27 @@ public class Movimiento : MonoBehaviour
         if (move.magnitude > 1f) move.Normalize();
 
         rb.MovePosition(rb.position + move * currentSpeed * Time.fixedDeltaTime);
-    }
+    }*/
 
-    public void OnMove(InputValue value)
+    /*public void OnMove(InputValue value)
     {
         moveInput = value.Get<Vector2>();
-    }
+    }*/
+
+
+
+
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    // Update is called once per frame
+
+
 }
+
+
+
+
+
+
