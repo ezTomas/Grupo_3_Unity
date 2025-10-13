@@ -25,7 +25,7 @@ public class enemigo : MonoBehaviour
             {
                 jugador = player.transform;
             }
-            Debug.Log("h");
+            
         }
     }
 
@@ -37,7 +37,7 @@ public class enemigo : MonoBehaviour
     public void Comportamiento_Enemigo()
     {
         cronometro += 1 * Time.deltaTime;
-        if (cronometro >= 2)
+        if (cronometro >= 4)
         {
             modo = Random.Range(0, 3);
             cronometro = 0;

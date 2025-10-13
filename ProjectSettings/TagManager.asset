@@ -7,8 +7,12 @@ TagManager:
   - Laberinto
   - Pared_Destroy
   - Enemy
+
+  - Objetos
+
   - 83
   - 64
+
   layers:
   - Default
   - TransparentFX
@@ -16,7 +20,7 @@ TagManager:
   - Enemy
   - Water
   - UI
-  - 
+  - Arbol
   - 
   - 
   - 
