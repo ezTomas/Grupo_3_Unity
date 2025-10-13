@@ -32,8 +32,9 @@ public class Movimiento : MonoBehaviour
 
 
     public float velocidad = 15f;
-    CharacterController controller;
+    public CharacterController controller;
     public bool cooldawn_stamina = false;
+
 
     void Awake()
     {
@@ -47,8 +48,8 @@ public class Movimiento : MonoBehaviour
 
         //Movimiento de camara con mouse
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        /*Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;*/
 
         //Inicio de la barra 
 
@@ -71,42 +72,29 @@ public class Movimiento : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         Vector2 mouseDelta = Mouse.current.delta.ReadValue() * mouseSensitivity;
 
         xRotation -= mouseDelta.y;
         xRotation = Mathf.Clamp(xRotation, -80f, 80f);
         playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 180f, 0f);
+        */
+        float movimientoX = Input.GetAxis("Horizontal");
+        float movimientoZ = Input.GetAxis("Vertical");
 
-        Vector3 movementInput = Vector3.zero;
-        if (Input.GetKey(KeyCode.S))
-        {
-            movementInput.z = 1;
-
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            movementInput.z = -1;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            movementInput.x = 1;
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            movementInput.x = -1;
-        }
-        Move(movementInput);
+        Vector3 movimiento = transform.right * movimientoX + transform.forward * movimientoZ;
 
         correr();
         recarga_stamina();
         cooldawn();
-        Debug.Log(stamina);
+        Vector3 mover = transform.right * movimientoX + transform.forward * movimientoZ;
+
+        controller.Move(mover * velocidad * Time.deltaTime);
 
 
-
-
+        /*
         transform.Rotate(Vector3.up * mouseDelta.x);
-        
+        */
         if (staminaBar != null)
         {
             staminaBar.value = stamina; 
