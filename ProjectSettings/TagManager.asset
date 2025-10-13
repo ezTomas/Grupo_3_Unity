@@ -8,6 +8,9 @@ TagManager:
   - Pared_Destroy
   - Enemy
   - Interaccion_candado
+  - 83
+  - 64
+
   layers:
   - Default
   - TransparentFX
