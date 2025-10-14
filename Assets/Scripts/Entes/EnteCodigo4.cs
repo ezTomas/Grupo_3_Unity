@@ -6,13 +6,15 @@ using System.Collections;
 using UnityEngine.Rendering;
 
 
-public class EnteCodigo3 : MonoBehaviour
+public class EnteCodigo4 : MonoBehaviour
 {
-    public Transform enteSegundo;
+    public Transform enteTercero;
     private bool enteVisto = false;
     public Transform lookingCameraTransform;
 
     private UtilidadDeEspejo espejo;
+
+    public GameObject enteOrigin;
 
     // DIALOGO
     [SerializeField] private GameObject dialogoPanel;
@@ -42,18 +44,15 @@ public class EnteCodigo3 : MonoBehaviour
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
         enteNumeroOrigin = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
 
-        enteSegundo.gameObject.SetActive(false);
+        enteTercero.gameObject.SetActive(false);
     }
 
     void Update()
     {
 
-        Debug.Log("enteNumeroOrigin.enteNumero: " + enteNumeroOrigin.enteNumero);
-
-
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumeroOrigin.enteNumero == 3 && enteVisto == true)
+        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumeroOrigin.enteNumero == 4 && enteVisto == true)
         {
             if (!dialogoStar)
             {
@@ -64,7 +63,8 @@ public class EnteCodigo3 : MonoBehaviour
             {
                 NextDialogoLine();
                 enteNumeroOrigin.enteNumero += 1;
-                enteSegundo.gameObject.SetActive(false);
+                enteTercero.gameObject.SetActive(false);
+                enteOrigin.SetActive(true);
             }
 
         }
@@ -106,7 +106,7 @@ public class EnteCodigo3 : MonoBehaviour
     public void CheckIfCameraIsLooking()
     {
 
-        forwardVectorTowardsCamera = (lookingCameraTransform.position - enteSegundo.position).normalized;
+        forwardVectorTowardsCamera = (lookingCameraTransform.position - enteTercero.position).normalized;
         dotProductResult = Vector3.Dot(lookingCameraTransform.forward, forwardVectorTowardsCamera);
         if (cameraLooking)
         {

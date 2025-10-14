@@ -884,10 +884,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.4575022
-  m_Height: 3.210022
+  m_Radius: 1.6970036
+  m_Height: 4.1757655
   m_Direction: 1
-  m_Center: {x: 0, y: 0.33805063, z: -0.00000014141125}
+  m_Center: {x: 0, y: 0.14163382, z: -0.00000014141125}
 --- !u!23 &454784117
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1533,6 +1533,7 @@ GameObject:
   - component: {fileID: 539643768}
   - component: {fileID: 539643767}
   - component: {fileID: 539643766}
+  - component: {fileID: 539643769}
   m_Layer: 7
   m_Name: ENnte (3)
   m_TagString: Untagged
@@ -1549,7 +1550,7 @@ Transform:
   m_GameObject: {fileID: 539643763}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 38.545773, y: 1.56, z: 44.599762}
+  m_LocalPosition: {x: 5.6, y: 1.56, z: 108.7}
   m_LocalScale: {x: 1.6492138, y: 1.807761, z: 1.6859945}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1574,10 +1575,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 1.8742104
+  m_Height: 5.218742
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0.2716192, z: -0.00000014141125}
 --- !u!23 &539643767
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1634,6 +1635,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539643763}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &539643769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 539643763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 364cd6895e16e054ab7d204cd2144211, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnteCodigo4
+  enteTercero: {fileID: 539643764}
+  lookingCameraTransform: {fileID: 1704206713}
+  enteOrigin: {fileID: 815094276}
+  dialogoPanel: {fileID: 149328652}
+  textoDialogo: {fileID: 1368057196}
+  linesDialogo:
+  - adwadaaaaaaaaaawwwwwwwww
+  sensitivity: 0.4
 --- !u!1 &681929937
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,9 +1882,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1.7914202
-  m_Height: 3.3566897
+  m_Height: 4.5870285
   m_Direction: 1
-  m_Center: {x: 0, y: 0.18966307, z: 0.0046699652}
+  m_Center: {x: 0, y: 0.14903845, z: 0.0046699652}
 --- !u!23 &815094279
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1929,7 +1950,7 @@ Transform:
   m_GameObject: {fileID: 815094276}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -56.05423, y: 1.56, z: 107.399765}
+  m_LocalPosition: {x: -56.05423, y: 1.93, z: 107.399765}
   m_LocalScale: {x: 1.6492138, y: 1.807761, z: 1.6859945}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3313,7 +3334,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -4020,10 +4041,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.3807583
-  m_Height: 2.841704
+  m_Radius: 1.695764
+  m_Height: 4.1480145
   m_Direction: 1
-  m_Center: {x: 0.000000072282496, y: 0.36155608, z: -0.000000070705624}
+  m_Center: {x: 0.00000014456499, y: 0.18960187, z: -0.00000014141125}
 --- !u!23 &1807205736
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4094,6 +4115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnteCodigo3
   enteSegundo: {fileID: 1807205733}
   lookingCameraTransform: {fileID: 1704206713}
+  enteTercero: {fileID: 539643763}
   dialogoPanel: {fileID: 1815330040}
   textoDialogo: {fileID: 128087915}
   linesDialogo:
