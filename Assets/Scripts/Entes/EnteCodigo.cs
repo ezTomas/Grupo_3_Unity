@@ -49,20 +49,38 @@ public class EnteCodigo : MonoBehaviour
 
         if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumero == 1)
         {
+
             if (!dialogoStar)
             {
                 StartDialogo();
-
             }
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
                 enteNumero += 1;
-                originEnte.gameObject.SetActive(false);
                 entePrimero.SetActive(true);
+                originEnte.gameObject.SetActive(false);
+                dialogoPanel.SetActive(false);
+                dialogoStar = false;
+            }
+        }
+        else if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumero == 5)
+        {
+            dialogoPanel.SetActive(true);
+
+            if (!dialogoStar)
+            {
+                StartDialogo2();
             }
 
+            else if (textoDialogo.text == linesDialogo[lineIndex])
+            {
+                NextDialogoLine();
+                originEnte.gameObject.SetActive(false);
+                dialogoPanel.SetActive(false);
+                dialogoStar = false;
+            }
         }
     }
 
@@ -70,10 +88,17 @@ public class EnteCodigo : MonoBehaviour
     {
         dialogoStar = true;
         dialogoPanel.SetActive(true);
-        lineIndex = 0;
         StartCoroutine(ShowLine());
+        lineIndex = 0;
+
     }
 
+    public void StartDialogo2()
+    {
+        dialogoStar = true;
+        StartCoroutine(ShowLine());
+        lineIndex = 1;
+    }
     private IEnumerator ShowLine()
     {
         textoDialogo.text = string.Empty;
@@ -94,7 +119,7 @@ public class EnteCodigo : MonoBehaviour
         }
         else
         {
-            dialogoStar = false;
+ 
             dialogoPanel.SetActive(false);
         }
     }
