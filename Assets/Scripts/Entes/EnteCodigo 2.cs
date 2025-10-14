@@ -14,6 +14,8 @@ public class EnteCodigo2 : MonoBehaviour
 
     private UtilidadDeEspejo espejo;
 
+    public GameObject enteSegundo;
+
     // DIALOGO
     [SerializeField] private GameObject dialogoPanel;
     [SerializeField] private TMP_Text textoDialogo;
@@ -65,6 +67,7 @@ public class EnteCodigo2 : MonoBehaviour
                 NextDialogoLine();
                 enteNumeroOrigin.enteNumero += 1;
                 entePrimero.gameObject.SetActive(false);
+                enteSegundo.SetActive(true);
             }
 
         }

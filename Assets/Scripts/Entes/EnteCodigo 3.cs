@@ -1,4 +1,4 @@
-﻿using UnityEditor.SceneManagement;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Video;
 using TMPro;
@@ -6,10 +6,10 @@ using System.Collections;
 using UnityEngine.Rendering;
 
 
-public class EnteCodigo : MonoBehaviour
+public class EnteCodigo3 : MonoBehaviour
 {
-    public Transform originEnte;
-    public int enteNumero = 0;
+    public Transform enteSegundo;
+    private bool enteVisto = false;
     public Transform lookingCameraTransform;
 
     private UtilidadDeEspejo espejo;
@@ -19,6 +19,7 @@ public class EnteCodigo : MonoBehaviour
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
 
+    private EnteCodigo enteNumeroOrigin;
 
     private bool isPlayerinRange;
 
@@ -27,7 +28,6 @@ public class EnteCodigo : MonoBehaviour
     private int lineIndex;
     //Dialogo
 
-    public GameObject entePrimero;
 
     [Range(0f, 1f)]
     public float sensitivity = 0.4f;
@@ -38,29 +38,33 @@ public class EnteCodigo : MonoBehaviour
 
     private void Start()
     {
-        espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
-        entePrimero.gameObject.SetActive(false);
 
+        espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
+        enteNumeroOrigin = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
+
+        enteSegundo.gameObject.SetActive(false);
     }
 
     void Update()
     {
+
+        Debug.Log("enteNumeroOrigin.enteNumero: " + enteNumeroOrigin.enteNumero);
+
+
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumero == 1)
+        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumeroOrigin.enteNumero == 3 && enteVisto == true)
         {
             if (!dialogoStar)
             {
                 StartDialogo();
-
             }
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
-                enteNumero += 1;
-                originEnte.gameObject.SetActive(false);
-                entePrimero.SetActive(true);
+                enteNumeroOrigin.enteNumero += 1;
+                enteSegundo.gameObject.SetActive(false);
             }
 
         }
@@ -102,7 +106,7 @@ public class EnteCodigo : MonoBehaviour
     public void CheckIfCameraIsLooking()
     {
 
-        forwardVectorTowardsCamera = (lookingCameraTransform.position - originEnte.position).normalized;
+        forwardVectorTowardsCamera = (lookingCameraTransform.position - enteSegundo.position).normalized;
         dotProductResult = Vector3.Dot(lookingCameraTransform.forward, forwardVectorTowardsCamera);
         if (cameraLooking)
         {
@@ -124,9 +128,9 @@ public class EnteCodigo : MonoBehaviour
 
     void StartLooking()
     {
-        if (espejo.usoEspejo == true && enteNumero == 0)
+        if (espejo.usoEspejo == true && enteVisto == false)
         {
-            enteNumero += 1;
+            enteVisto = true;
 
         }
     }
