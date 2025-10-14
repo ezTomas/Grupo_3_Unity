@@ -16,7 +16,7 @@ public class Movimiento : MonoBehaviour
     //Resistencia
 
     public float maxStamina = 50f;
-    public float stamina = 25;
+    public float stamina = 35;
     public float staminaDism = 10f; //Disminucion de estamina
     public float staminaRegen = 5f; //Aumento de estamina
 
@@ -118,7 +118,7 @@ public class Movimiento : MonoBehaviour
 
     private void recarga_stamina()
     {
-        if (stamina < 25)
+        if (stamina < 35)
         {
             stamina += 2 * Time.fixedDeltaTime;
         }
