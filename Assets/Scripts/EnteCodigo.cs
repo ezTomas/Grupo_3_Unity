@@ -52,6 +52,11 @@ public class EnteCodigo : MonoBehaviour
                 StartDialogo();
             }
 
+            else if (textoDialogo.text == linesDialogo[lineIndex])
+            {
+                NextDialogoLine();
+            }
+
         }
     }
 
@@ -71,6 +76,20 @@ public class EnteCodigo : MonoBehaviour
         {
             textoDialogo.text += ch;
             yield return new WaitForSeconds(tiempoTexto);
+        }
+    }
+
+    private void NextDialogoLine()
+    {
+        lineIndex++;
+        if (lineIndex < linesDialogo.Length)
+        {
+            StartCoroutine(ShowLine());
+        }
+        else
+        {
+            dialogoStar = false;
+            dialogoPanel.SetActive(false);
         }
     }
 
