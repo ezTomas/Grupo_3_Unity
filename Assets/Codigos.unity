@@ -600,8 +600,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -962,7 +962,8 @@ MonoBehaviour:
   dialogoPanel: {fileID: 1456874764}
   textoDialogo: {fileID: 1788130723}
   linesDialogo:
-  - ajsndjknhjuidla
+  - "Este bosque... maldito dicen muchos, tal vez tengan raz\xF3n, sino no deberia
+    estar aqui."
   sensitivity: 0.4
 --- !u!1 &466050929
 GameObject:
@@ -1653,7 +1654,8 @@ MonoBehaviour:
   dialogoPanel: {fileID: 149328652}
   textoDialogo: {fileID: 1368057196}
   linesDialogo:
-  - adwadaaaaaaaaaawwwwwwwww
+  - "Lamentablemente nunca podr\xE9 irme de este lugar maldito, pero talvez tu si
+    puedes, vuelve a la granja para saber lo que vienes a buscar"
   sensitivity: 0.4
 --- !u!1 &681929937
 GameObject:
@@ -1974,10 +1976,10 @@ MonoBehaviour:
   dialogoPanel: {fileID: 1434407972}
   textoDialogo: {fileID: 967383151}
   linesDialogo:
-  - '
-
-    asasdjkbn1bnbnbnbnbnbnbnbnbnb'
-  - "easljd\xF1fbekliyfvek"
+  - "\xBFQu\xE9 haces aqu\xED? Buscame por el bosque para poder revelarte como escapar,
+    pero no en el Laberinto, nunca me gusto ese lugar"
+  - Ves esas velas y libros dispersos por esta granja? ahi tienes tu respuesta, buena
+    suerte
   entePrimero: {fileID: 454784113}
   sensitivity: 0.4
 --- !u!1 &815805818
@@ -2517,8 +2519,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2555,7 +2557,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -9.697113, y: -0.10067372, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3362,8 +3364,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3449,8 +3451,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -187.92012}
-  m_SizeDelta: {x: -5, y: -376.41272}
+  m_AnchoredPosition: {x: -0.000030517578, y: -184.85187}
+  m_SizeDelta: {x: -5, y: -370.2762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1434407974
 MonoBehaviour:
@@ -3936,8 +3938,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -4120,7 +4122,9 @@ MonoBehaviour:
   dialogoPanel: {fileID: 1815330040}
   textoDialogo: {fileID: 128087915}
   linesDialogo:
-  - dawdawdawdadaw
+  - "Ese laberinto parece ser un lugar sagrado, el \xFAnico lugar de este bosque
+    donde la luz de la luna llega, nunca me ha gustado, inclusive desde que estaba
+    vivo."
   sensitivity: 0.4
 --- !u!1 &1815330040
 GameObject:

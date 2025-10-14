@@ -39,7 +39,7 @@ public class EnteCodigo : MonoBehaviour
     private void Start()
     {
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
-        entePrimero.gameObject.SetActive(false);
+
 
     }
 
@@ -151,6 +151,7 @@ public class EnteCodigo : MonoBehaviour
     {
         if (espejo.usoEspejo == true && enteNumero == 0)
         {
+            Debug.Log("asfd3");
             enteNumero += 1;
 
         }

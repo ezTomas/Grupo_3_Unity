@@ -40,8 +40,8 @@ public class EnteCodigo2 : MonoBehaviour
 
     private void Start()
     {
-
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
+
         enteNumeroOrigin = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
 
         entePrimero.gameObject.SetActive(false);
@@ -50,12 +50,9 @@ public class EnteCodigo2 : MonoBehaviour
     void Update()
     {
 
-        Debug.Log("enteNumeroOrigin.enteNumero: " + enteNumeroOrigin.enteNumero);
-
-
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)
+        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)   
         {
             if (!dialogoStar)
             {
