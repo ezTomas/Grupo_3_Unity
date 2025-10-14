@@ -1,4 +1,4 @@
-﻿using UnityEditor.SceneManagement;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Video;
 using TMPro;
@@ -6,10 +6,10 @@ using System.Collections;
 using UnityEngine.Rendering;
 
 
-public class EnteCodigo : MonoBehaviour
+public class EnteCodigo2 : MonoBehaviour
 {
-    public Transform originEnte;
-    private int enteNumero = 0;
+    public Transform entePrimero;
+    private bool enteVisto = false;
     public Transform lookingCameraTransform;
 
     private UtilidadDeEspejo espejo;
@@ -19,6 +19,7 @@ public class EnteCodigo : MonoBehaviour
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
 
+    private EnteCodigo enteNumeroOrigin;
 
     private bool isPlayerinRange;
 
@@ -37,15 +38,22 @@ public class EnteCodigo : MonoBehaviour
 
     private void Start()
     {
-        espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
 
+        espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
+        enteNumeroOrigin = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
+
+        entePrimero.gameObject.SetActive(false);
     }
 
     void Update()
     {
+
+        Debug.Log("enteNumeroOrigin.enteNumero: " + enteNumeroOrigin.enteNumero);
+
+
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumero == 1)
+        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)
         {
             if (!dialogoStar)
             {
@@ -55,6 +63,8 @@ public class EnteCodigo : MonoBehaviour
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
+                enteNumeroOrigin.enteNumero += 1;
+                entePrimero.gameObject.SetActive(false);
             }
 
         }
@@ -96,7 +106,7 @@ public class EnteCodigo : MonoBehaviour
     public void CheckIfCameraIsLooking()
     {
 
-        forwardVectorTowardsCamera = (lookingCameraTransform.position - originEnte.position).normalized;
+        forwardVectorTowardsCamera = (lookingCameraTransform.position - entePrimero.position).normalized;
         dotProductResult = Vector3.Dot(lookingCameraTransform.forward, forwardVectorTowardsCamera);
         if (cameraLooking)
         {
@@ -118,9 +128,9 @@ public class EnteCodigo : MonoBehaviour
 
     void StartLooking()
     {
-        if (espejo.usoEspejo == true && enteNumero == 0)
+        if (espejo.usoEspejo == true && enteVisto == false)
         {
-            enteNumero += 1;
+            enteVisto = true;
 
         }
     }
