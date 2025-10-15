@@ -51,7 +51,7 @@ public class enemigo : MonoBehaviour
                 grado = Random.Range(0, 360);
                 angulo = Quaternion.Euler(0, grado, 0);
                 int pos = Random.Range(-90, 90);
-                transform.position = new Vector3(Random.Range(jugador.position.x + 30, pos), 2, Random.Range(jugador.position.z + 30, pos));
+                transform.position = new Vector3(Random.Range(jugador.position.x + 30, pos), 0, Random.Range(jugador.position.z + 30, pos));
                 
                 modo++;
                 break;
