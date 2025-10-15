@@ -1062,7 +1062,7 @@ GameObject:
   - component: {fileID: 1431284601}
   - component: {fileID: 1431284600}
   - component: {fileID: 1431284599}
-  - component: {fileID: 1431284603}
+  - component: {fileID: 1431284602}
   m_Layer: 5
   m_Name: InputField (TMP)
   m_TagString: Untagged
@@ -1241,7 +1241,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1431284597}
   m_CullTransparentMesh: 1
---- !u!114 &1431284603
+--- !u!114 &1431284602
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
