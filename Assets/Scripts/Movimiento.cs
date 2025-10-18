@@ -17,7 +17,7 @@ public class Movimiento : MonoBehaviour
 
     public float maxStamina = 50f;
     public float stamina = 35;
-    public float staminaDism = 10f; //Disminucion de estamina
+    public float staminaDism = 2.5f; //Disminucion de estamina
     public float staminaRegen = 5f; //Aumento de estamina
 
     //Movimiento de camara con mouse
@@ -120,7 +120,7 @@ public class Movimiento : MonoBehaviour
     {
         if (stamina < 35)
         {
-            stamina += 2 * Time.fixedDeltaTime;
+            stamina += 1 * Time.fixedDeltaTime;
         }
     }
 
