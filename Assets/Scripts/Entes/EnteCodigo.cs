@@ -15,6 +15,7 @@ public class EnteCodigo : MonoBehaviour
     private UtilidadDeEspejo espejo;
 
     // DIALOGO
+    [SerializeField] private GameObject dialogoMark;
     [SerializeField] private GameObject dialogoPanel;
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
@@ -39,8 +40,7 @@ public class EnteCodigo : MonoBehaviour
     private void Start()
     {
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
-
-
+        dialogoMark.SetActive(false);
     }
 
     void Update()
@@ -90,7 +90,7 @@ public class EnteCodigo : MonoBehaviour
         dialogoPanel.SetActive(true);
         StartCoroutine(ShowLine());
         lineIndex = 0;
-
+        Time.timeScale = 0f;
     }
 
     public void StartDialogo2()
@@ -98,6 +98,7 @@ public class EnteCodigo : MonoBehaviour
         dialogoStar = true;
         StartCoroutine(ShowLine());
         lineIndex = 1;
+        Time.timeScale = 0f;
     }
     private IEnumerator ShowLine()
     {
@@ -106,8 +107,8 @@ public class EnteCodigo : MonoBehaviour
         foreach (char ch in linesDialogo[lineIndex])
         {
             textoDialogo.text += ch;
-            yield return new WaitForSeconds(tiempoTexto);
-        }
+            yield return new WaitForSecondsRealtime(tiempoTexto);
+        } 
     }
 
     private void NextDialogoLine()
@@ -119,8 +120,8 @@ public class EnteCodigo : MonoBehaviour
         }
         else
         {
- 
             dialogoPanel.SetActive(false);
+            Time.timeScale = 1f;
         }
     }
 
@@ -153,7 +154,7 @@ public class EnteCodigo : MonoBehaviour
         {
             Debug.Log("asfd3");
             enteNumero += 1;
-
+            dialogoMark.SetActive(true);
         }
     }
 

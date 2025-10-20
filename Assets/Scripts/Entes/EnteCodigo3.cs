@@ -75,6 +75,7 @@ public class EnteCodigo3 : MonoBehaviour
         dialogoPanel.SetActive(true);
         lineIndex = 0;
         StartCoroutine(ShowLine());
+        Time.timeScale = 0f;
     }
 
     private IEnumerator ShowLine()
@@ -99,6 +100,7 @@ public class EnteCodigo3 : MonoBehaviour
         {
             dialogoStar = false;
             dialogoPanel.SetActive(false);
+            Time.timeScale = 1f;
         }
     }
 
