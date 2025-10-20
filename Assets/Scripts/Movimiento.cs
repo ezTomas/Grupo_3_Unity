@@ -16,8 +16,8 @@ public class Movimiento : MonoBehaviour
     //Resistencia
 
     public float maxStamina = 50f;
-    public float stamina = 35;
-    public float staminaDism = 2.5f; //Disminucion de estamina
+    public float stamina = 35f;
+    public float staminaDism = 1f; //Disminucion de estamina
     public float staminaRegen = 5f; //Aumento de estamina
 
     //Movimiento de camara con mouse
@@ -33,52 +33,33 @@ public class Movimiento : MonoBehaviour
 
     public float velocidad = 15f;
     public CharacterController controller;
-    public bool cooldawn_stamina = false;
 
 
     void Awake()
     {
         controller = GetComponent<CharacterController>();
-        //Movimiento y correr
-        /* rb = GetComponent<Rigidbody>();
-        currentSpeed = walkSpeed;
-        */
-        //Resistencia
+
         stamina = maxStamina;
-
-        //Movimiento de camara con mouse
-
-        /*Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;*/
-
-        //Inicio de la barra 
-
         if (staminaBar != null)
         {
             staminaBar.maxValue = maxStamina;
-            staminaBar.value = stamina; 
+            staminaBar.value = stamina;
         }
 
 
 
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        /*
-        Vector2 mouseDelta = Mouse.current.delta.ReadValue() * mouseSensitivity;
 
-        xRotation -= mouseDelta.y;
-        xRotation = Mathf.Clamp(xRotation, -80f, 80f);
-        playerCamera.transform.localRotation = Quaternion.Euler(xRotation, 180f, 0f);
-        */
         float movimientoX = Input.GetAxis("Horizontal");
         float movimientoZ = Input.GetAxis("Vertical");
 
@@ -86,28 +67,24 @@ public class Movimiento : MonoBehaviour
 
         correr();
         recarga_stamina();
-        cooldawn();
+
         Vector3 mover = transform.right * movimientoX + transform.forward * movimientoZ;
 
         controller.Move(mover * velocidad * Time.deltaTime);
 
-
-        /*
-        transform.Rotate(Vector3.up * mouseDelta.x);
-        */
         if (staminaBar != null)
         {
-            staminaBar.value = stamina; 
+            staminaBar.value = stamina;
         }
-        
+
     }
 
     private void correr()
     {
-        if (Input.GetKey(KeyCode.LeftShift) && stamina >=1 && cooldawn_stamina == false) 
+        if (Input.GetKey(KeyCode.LeftShift) && stamina >= 0)
         {
-            velocidad = 25f;
-            stamina -= staminaDism * Time.fixedDeltaTime;
+            velocidad = 30f;
+            stamina -= 0.7f * Time.fixedDeltaTime;
         }
         else
         {
@@ -120,69 +97,9 @@ public class Movimiento : MonoBehaviour
     {
         if (stamina < 35)
         {
-            stamina += 1 * Time.fixedDeltaTime;
+            stamina += 0.2f * Time.fixedDeltaTime;
         }
     }
-
-    private void cooldawn()
-    {
-        if (stamina <= 0)
-        {
-            cooldawn_stamina = true;
-
-        }
-        else
-        {
-            cooldawn_stamina = false;
-        }
-
-    }
-    private void Move(Vector3 Direccion)
-    {
-        controller.SimpleMove(Direccion.normalized * velocidad);
-    }
-
-    /*
-    void FixedUpdate()
-    {
-
-        bool wantsToRun = Keyboard.current.shiftKey.isPressed;
-
-        if (wantsToRun && stamina > 0f)
-        {
-            stamina -= staminaDism * Time.deltaTime;
-            if (stamina < 0f) stamina = 0f;
-        }
-        else
-        {
-            stamina += staminaRegen * Time.fixedDeltaTime;
-            if (stamina > maxStamina) stamina = maxStamina;
-        }
-
-        bool canRun = wantsToRun && stamina > 0f;
-        currentSpeed = canRun ? runSpeed : walkSpeed;
-
-        Vector3 move = transform.right * moveInput.x + transform.forward * moveInput.y;
-        if (move.magnitude > 1f) move.Normalize();
-
-        rb.MovePosition(rb.position + move * currentSpeed * Time.fixedDeltaTime);
-    }*/
-
-    /*public void OnMove(InputValue value)
-    {
-        moveInput = value.Get<Vector2>();
-    }*/
-
-
-
-
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-    // Update is called once per frame
-
-
 }
 
 
