@@ -47,7 +47,7 @@ public class EnteCodigo : MonoBehaviour
     {
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumero == 1)
+        if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 1)
         {
 
             if (!dialogoStar)
@@ -58,6 +58,7 @@ public class EnteCodigo : MonoBehaviour
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
+                Time.timeScale = 1f;
                 enteNumero += 1;
                 entePrimero.SetActive(true);
                 originEnte.gameObject.SetActive(false);
@@ -65,7 +66,7 @@ public class EnteCodigo : MonoBehaviour
                 dialogoStar = false;
             }
         }
-        else if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumero == 5)
+        else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
         {
             dialogoPanel.SetActive(true);
 
@@ -77,6 +78,7 @@ public class EnteCodigo : MonoBehaviour
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
+                Time.timeScale = 1f;
                 originEnte.gameObject.SetActive(false);
                 dialogoPanel.SetActive(false);
                 dialogoStar = false;
@@ -120,8 +122,9 @@ public class EnteCodigo : MonoBehaviour
         }
         else
         {
+
             dialogoPanel.SetActive(false);
-            Time.timeScale = 1f;
+
         }
     }
 
