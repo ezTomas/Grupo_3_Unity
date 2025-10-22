@@ -49,6 +49,7 @@ public class EnteCodigo : MonoBehaviour
 
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 1)
         {
+            dialogoPanel.SetActive(true);
 
             if (!dialogoStar)
             {
@@ -155,7 +156,6 @@ public class EnteCodigo : MonoBehaviour
     {
         if (espejo.usoEspejo == true && enteNumero == 0)
         {
-            Debug.Log("asfd3");
             enteNumero += 1;
             dialogoMark.SetActive(true);
         }
