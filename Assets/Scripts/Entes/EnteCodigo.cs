@@ -15,6 +15,7 @@ public class EnteCodigo : MonoBehaviour
     private UtilidadDeEspejo espejo;
 
     // DIALOGO
+    [SerializeField] private GameObject dialogoMark;
     [SerializeField] private GameObject dialogoPanel;
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
@@ -39,16 +40,16 @@ public class EnteCodigo : MonoBehaviour
     private void Start()
     {
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
-
-
+        dialogoMark.SetActive(false);
     }
 
     void Update()
     {
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumero == 1)
+        if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 1)
         {
+            dialogoPanel.SetActive(true);
 
             if (!dialogoStar)
             {
@@ -58,6 +59,7 @@ public class EnteCodigo : MonoBehaviour
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
+                Time.timeScale = 1f;
                 enteNumero += 1;
                 entePrimero.SetActive(true);
                 originEnte.gameObject.SetActive(false);
@@ -65,7 +67,7 @@ public class EnteCodigo : MonoBehaviour
                 dialogoStar = false;
             }
         }
-        else if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumero == 5)
+        else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
         {
             dialogoPanel.SetActive(true);
 
@@ -77,6 +79,7 @@ public class EnteCodigo : MonoBehaviour
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
+                Time.timeScale = 1f;
                 originEnte.gameObject.SetActive(false);
                 dialogoPanel.SetActive(false);
                 dialogoStar = false;
@@ -90,7 +93,7 @@ public class EnteCodigo : MonoBehaviour
         dialogoPanel.SetActive(true);
         StartCoroutine(ShowLine());
         lineIndex = 0;
-
+        Time.timeScale = 0f;
     }
 
     public void StartDialogo2()
@@ -98,6 +101,7 @@ public class EnteCodigo : MonoBehaviour
         dialogoStar = true;
         StartCoroutine(ShowLine());
         lineIndex = 1;
+        Time.timeScale = 0f;
     }
     private IEnumerator ShowLine()
     {
@@ -106,8 +110,8 @@ public class EnteCodigo : MonoBehaviour
         foreach (char ch in linesDialogo[lineIndex])
         {
             textoDialogo.text += ch;
-            yield return new WaitForSeconds(tiempoTexto);
-        }
+            yield return new WaitForSecondsRealtime(tiempoTexto);
+        } 
     }
 
     private void NextDialogoLine()
@@ -119,8 +123,9 @@ public class EnteCodigo : MonoBehaviour
         }
         else
         {
- 
+
             dialogoPanel.SetActive(false);
+
         }
     }
 
@@ -151,9 +156,8 @@ public class EnteCodigo : MonoBehaviour
     {
         if (espejo.usoEspejo == true && enteNumero == 0)
         {
-            Debug.Log("asfd3");
             enteNumero += 1;
-
+            dialogoMark.SetActive(true);
         }
     }
 

@@ -17,6 +17,7 @@ public class EnteCodigo2 : MonoBehaviour
     public GameObject enteSegundo;
 
     // DIALOGO
+    [SerializeField] private GameObject dialogoMark;
     [SerializeField] private GameObject dialogoPanel;
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
@@ -45,6 +46,8 @@ public class EnteCodigo2 : MonoBehaviour
         enteNumeroOrigin = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
 
         entePrimero.gameObject.SetActive(false);
+
+        dialogoMark.SetActive(false);
     }
 
     void Update()
@@ -52,7 +55,7 @@ public class EnteCodigo2 : MonoBehaviour
 
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)   
+        if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)   
         {
             if (!dialogoStar)
             {
@@ -61,6 +64,7 @@ public class EnteCodigo2 : MonoBehaviour
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
+                Time.timeScale = 1f;
                 NextDialogoLine();
                 enteNumeroOrigin.enteNumero += 1;
                 entePrimero.gameObject.SetActive(false);
@@ -76,6 +80,7 @@ public class EnteCodigo2 : MonoBehaviour
         dialogoPanel.SetActive(true);
         lineIndex = 0;
         StartCoroutine(ShowLine());
+        Time.timeScale = 0f;
     }
 
     private IEnumerator ShowLine()
@@ -85,7 +90,7 @@ public class EnteCodigo2 : MonoBehaviour
         foreach (char ch in linesDialogo[lineIndex])
         {
             textoDialogo.text += ch;
-            yield return new WaitForSeconds(tiempoTexto);
+            yield return new WaitForSecondsRealtime(tiempoTexto);
         }
     }
 
@@ -131,6 +136,7 @@ public class EnteCodigo2 : MonoBehaviour
         if (espejo.usoEspejo == true && enteVisto == false)
         {
             enteVisto = true;
+            dialogoMark.SetActive(true);
 
         }
     }

@@ -16,6 +16,7 @@ public class EnteCodigo3 : MonoBehaviour
     public GameObject enteTercero;
 
     // DIALOGO
+    [SerializeField] private GameObject dialogoMark;
     [SerializeField] private GameObject dialogoPanel;
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
@@ -44,6 +45,8 @@ public class EnteCodigo3 : MonoBehaviour
         enteNumeroOrigin = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
 
         enteSegundo.gameObject.SetActive(false);
+
+        dialogoMark.SetActive(false);
     }
 
     void Update()
@@ -51,7 +54,7 @@ public class EnteCodigo3 : MonoBehaviour
 
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetButtonDown("Fire1") && enteNumeroOrigin.enteNumero == 3 && enteVisto == true)
+        if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 3 && enteVisto == true)
         {
             if (!dialogoStar)
             {
@@ -60,6 +63,7 @@ public class EnteCodigo3 : MonoBehaviour
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
+                Time.timeScale = 1f;
                 NextDialogoLine();
                 enteNumeroOrigin.enteNumero += 1;
                 enteSegundo.gameObject.SetActive(false);
@@ -75,6 +79,7 @@ public class EnteCodigo3 : MonoBehaviour
         dialogoPanel.SetActive(true);
         lineIndex = 0;
         StartCoroutine(ShowLine());
+        Time.timeScale = 0f;
     }
 
     private IEnumerator ShowLine()
@@ -84,7 +89,7 @@ public class EnteCodigo3 : MonoBehaviour
         foreach (char ch in linesDialogo[lineIndex])
         {
             textoDialogo.text += ch;
-            yield return new WaitForSeconds(tiempoTexto);
+            yield return new WaitForSecondsRealtime(tiempoTexto);
         }
     }
 
@@ -99,6 +104,7 @@ public class EnteCodigo3 : MonoBehaviour
         {
             dialogoStar = false;
             dialogoPanel.SetActive(false);
+
         }
     }
 
@@ -130,6 +136,7 @@ public class EnteCodigo3 : MonoBehaviour
         if (espejo.usoEspejo == true && enteVisto == false)
         {
             enteVisto = true;
+            dialogoMark.SetActive(true);
 
         }
     }
