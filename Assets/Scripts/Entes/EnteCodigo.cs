@@ -12,6 +12,8 @@ public class EnteCodigo : MonoBehaviour
     public int enteNumero = 0;
     public Transform lookingCameraTransform;
 
+    public Timer myTimer;
+
     private UtilidadDeEspejo espejo;
 
     // DIALOGO
@@ -41,6 +43,7 @@ public class EnteCodigo : MonoBehaviour
     {
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
         dialogoMark.SetActive(false);
+
     }
 
     void Update()
@@ -50,6 +53,8 @@ public class EnteCodigo : MonoBehaviour
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 1)
         {
             dialogoPanel.SetActive(true);
+
+            myTimer.StartTimer();
 
             if (!dialogoStar)
             {
@@ -84,7 +89,10 @@ public class EnteCodigo : MonoBehaviour
                 dialogoPanel.SetActive(false);
                 dialogoStar = false;
             }
+
+
         }
+
     }
 
     public void StartDialogo()

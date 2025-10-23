@@ -6,6 +6,8 @@ public class UtilidadDeEspejo : MonoBehaviour
 {
     public Transform espejo1;
     public Camera camara;
+    private Metricas metricas;
+
 
     [Header("Original Position")]
     public Quaternion originalRotationEspejo1;
@@ -27,6 +29,7 @@ public class UtilidadDeEspejo : MonoBehaviour
         couldown = GetComponent<Couldown_Espejo>();
         camara.gameObject.SetActive(false);
         usoEspejo = false;
+        metricas = GameObject.Find("Metricas Manager").GetComponent<Metricas>();
     }
 
     void Update()
@@ -38,6 +41,7 @@ public class UtilidadDeEspejo : MonoBehaviour
             espejo1.localRotation = Quaternion.Euler(rotationEspejoAtras);
             camara.gameObject.SetActive(true);
             usoEspejo = true;
+
         }
         else
         {
@@ -46,7 +50,13 @@ public class UtilidadDeEspejo : MonoBehaviour
             usoEspejo = false;
 
         }
+
+        if (Mouse.current.rightButton.wasPressedThisFrame)
+        {
+            Metricas.Instance.RegistrarEvento("Uso Espejo", 1f);
+        }
     }
+
 
     private void OnTriggerStay(Collider other)
     {

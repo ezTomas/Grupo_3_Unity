@@ -8,6 +8,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public GameObject gameOver;
     private CanvasGroup canvasGroup;
 
+
     public float tiempoLimite = 0f;
     void Start()
     {
@@ -30,6 +31,8 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
             if (tiempoLimite >= 1)
             {
+                Metricas.Instance.RegistrarEvento("Muertes", 1f);
+
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }

@@ -16989,8 +16989,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -229.74}
-  m_SizeDelta: {x: -40, y: -467.48}
+  m_AnchoredPosition: {x: 0, y: -147.2}
+  m_SizeDelta: {x: -40, y: -302.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &451082260
 MonoBehaviour:
@@ -28286,6 +28286,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 735032565}
   m_CullTransparentMesh: 1
+--- !u!1 &735689736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 735689738}
+  - component: {fileID: 735689737}
+  m_Layer: 0
+  m_Name: Timer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &735689737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735689736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355bb41a5b0d8dd46a5da92a079272a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Timer
+--- !u!4 &735689738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735689736}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 665.06287, y: 0, z: 1511.6259}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &736969596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34264,8 +34308,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -229.74002}
-  m_SizeDelta: {x: -40, y: -467.47998}
+  m_AnchoredPosition: {x: 0, y: -145.25002}
+  m_SizeDelta: {x: -40, y: -298.49997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &868005462
 MonoBehaviour:
@@ -37153,8 +37197,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -229.74}
-  m_SizeDelta: {x: -40, y: -467.48}
+  m_AnchoredPosition: {x: 0, y: -146.05}
+  m_SizeDelta: {x: -40, y: -300.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &915951144
 MonoBehaviour:
@@ -56861,6 +56905,7 @@ MonoBehaviour:
   originEnte: {fileID: 1353568376}
   enteNumero: 0
   lookingCameraTransform: {fileID: 804763998}
+  myTimer: {fileID: 735689737}
   dialogoMark: {fileID: 804857293}
   dialogoPanel: {fileID: 868005460}
   textoDialogo: {fileID: 1201748474}
@@ -81007,6 +81052,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1958938678}
+  - component: {fileID: 1958938679}
+  - component: {fileID: 1958938680}
   m_Layer: 0
   m_Name: Metricas Manager
   m_TagString: Untagged
@@ -81029,6 +81076,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1958938679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958938677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef921614515341c4789ad429889caf94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Metricas
+--- !u!114 &1958938680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1958938677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f61202f2551a8f4f95c570367b35df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IniciarSesion
 --- !u!1001 &1963494541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -82410,7 +82481,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 150.26549, z: 0, w: 65.24344}
+  m_margin: {x: 0, y: 118.89446, z: 0, w: 43.087982}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -86893,8 +86964,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -229.74}
-  m_SizeDelta: {x: -40, y: -467.48}
+  m_AnchoredPosition: {x: 0, y: -144.05002}
+  m_SizeDelta: {x: -40, y: -296.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2134607977
 MonoBehaviour:
@@ -87161,3 +87232,4 @@ SceneRoots:
   - {fileID: 1413618884}
   - {fileID: 570815317}
   - {fileID: 1958938678}
+  - {fileID: 735689738}
