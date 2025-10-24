@@ -16,6 +16,8 @@ public class EnteCodigo : MonoBehaviour
 
     private UtilidadDeEspejo espejo;
 
+    private DetectorLibrosyVelas detector;
+
     // DIALOGO
     [SerializeField] private GameObject dialogoMark;
     [SerializeField] private GameObject dialogoPanel;
@@ -42,6 +44,7 @@ public class EnteCodigo : MonoBehaviour
     private void Start()
     {
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
+        detector = GameObject.Find("Player").GetComponent<DetectorLibrosyVelas>();
         dialogoMark.SetActive(false);
 
     }
@@ -88,6 +91,12 @@ public class EnteCodigo : MonoBehaviour
                 originEnte.gameObject.SetActive(false);
                 dialogoPanel.SetActive(false);
                 dialogoStar = false;
+
+                detector.libro.enabled = true;
+                detector.vela.enabled = true;
+
+                detector.numeroLibrosUI.enabled = true;
+                detector.numeroVelasUI.enabled = true;
             }
 
 

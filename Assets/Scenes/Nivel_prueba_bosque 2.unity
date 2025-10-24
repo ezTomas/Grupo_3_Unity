@@ -68797,6 +68797,7 @@ GameObject:
   - component: {fileID: 1620850012}
   - component: {fileID: 1620850011}
   - component: {fileID: 1620850023}
+  - component: {fileID: 1620850024}
   - component: {fileID: 1620850022}
   m_Layer: 0
   m_Name: Player
@@ -69047,6 +69048,21 @@ MonoBehaviour:
   seisCuatro: {fileID: 0}
   numero83: {fileID: 931659183}
   numero64: {fileID: 931659183}
+--- !u!114 &1620850024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620850009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da861343969e9d0439061bb197995652, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DetectorLibrosyVelas
+  rayDistance: 30
+  numeroVelasUI: {fileID: 310308355}
+  numeroLibrosUI: {fileID: 750016550}
 --- !u!1 &1622522997
 GameObject:
   m_ObjectHideFlags: 0
