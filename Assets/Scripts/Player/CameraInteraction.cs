@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class CamaraInteraction : MonoBehaviour
 {
-    private Transform camera;
+    private Transform cameraMain;
     public float rayDistance;
     public GameObject gameOver;
     private CanvasGroup canvasGroup;
@@ -12,18 +12,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float tiempoLimite = 0f;
     void Start()
     {
-        camera = transform.Find("Main Camera");
+        cameraMain = transform.Find("Main Camera");
         canvasGroup = gameOver.GetComponent<CanvasGroup>();
         canvasGroup.alpha = 0;
     }
 
     void Update()
     {
-        Debug.DrawRay(camera.position, camera.forward * rayDistance, Color.black);
+        Debug.DrawRay(cameraMain.position, cameraMain.forward * rayDistance, Color.black);
 
         RaycastHit hit;
 
-        if (Physics.Raycast(camera.position, camera.forward, out hit, rayDistance, LayerMask.GetMask("Enemy")))
+        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance, LayerMask.GetMask("Enemy")))
         {
 
             tiempoLimite += Time.deltaTime;
