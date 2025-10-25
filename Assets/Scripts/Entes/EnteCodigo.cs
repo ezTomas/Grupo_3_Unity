@@ -12,10 +12,13 @@ public class EnteCodigo : MonoBehaviour
     public int enteNumero = 0;
     public Transform lookingCameraTransform;
 
+    //Metricas
     public Timer myTimer;
 
+    //Ver al ente con espejo
     private UtilidadDeEspejo espejo;
 
+    //habilitar la deteccion de velas y libros
     private DetectorLibrosyVelas detector;
 
     // DIALOGO
@@ -24,6 +27,8 @@ public class EnteCodigo : MonoBehaviour
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
 
+    //misiones
+    private Misiones misiones;
 
     private bool isPlayerinRange;
 
@@ -46,6 +51,9 @@ public class EnteCodigo : MonoBehaviour
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
         detector = GameObject.Find("Player").GetComponent<DetectorLibrosyVelas>();
         dialogoMark.SetActive(false);
+
+        misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
+
 
     }
 
@@ -73,6 +81,8 @@ public class EnteCodigo : MonoBehaviour
                 originEnte.gameObject.SetActive(false);
                 dialogoPanel.SetActive(false);
                 dialogoStar = false;
+
+                misiones.misione += 1;
             }
         }
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
@@ -97,6 +107,8 @@ public class EnteCodigo : MonoBehaviour
 
                 detector.numeroLibrosUI.enabled = true;
                 detector.numeroVelasUI.enabled = true;
+
+                misiones.misione += 1;
             }
 
 
