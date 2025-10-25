@@ -57,7 +57,7 @@ public class DetectorLibrosyVelas : MonoBehaviour
             if (numeroLibros == 4)
             {
                 libro.color = colorAro;
-                numeroLibrosUI.fontMaterial.SetColor("_OutlineColor", colorAro);
+                numeroLibrosUI.color = colorAro;
             }
 
         }
@@ -71,7 +71,7 @@ public class DetectorLibrosyVelas : MonoBehaviour
             if (numeroVelas == 6)
             {
                 vela.color = colorAro;
-                numeroVelasUI.fontMaterial.SetColor("_OutlineColor", colorAro);
+                numeroVelasUI.color = colorAro;
             }
 
         }
