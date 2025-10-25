@@ -12,7 +12,11 @@ public class EnteCodigo : MonoBehaviour
     public int enteNumero = 0;
     public Transform lookingCameraTransform;
 
+    public Timer myTimer;
+
     private UtilidadDeEspejo espejo;
+
+    private DetectorLibrosyVelas detector;
 
     // DIALOGO
     [SerializeField] private GameObject dialogoMark;
@@ -40,7 +44,9 @@ public class EnteCodigo : MonoBehaviour
     private void Start()
     {
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
+        detector = GameObject.Find("Player").GetComponent<DetectorLibrosyVelas>();
         dialogoMark.SetActive(false);
+
     }
 
     void Update()
@@ -50,6 +56,8 @@ public class EnteCodigo : MonoBehaviour
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 1)
         {
             dialogoPanel.SetActive(true);
+
+            myTimer.StartTimer();
 
             if (!dialogoStar)
             {
@@ -83,8 +91,17 @@ public class EnteCodigo : MonoBehaviour
                 originEnte.gameObject.SetActive(false);
                 dialogoPanel.SetActive(false);
                 dialogoStar = false;
+
+                detector.libro.enabled = true;
+                detector.vela.enabled = true;
+
+                detector.numeroLibrosUI.enabled = true;
+                detector.numeroVelasUI.enabled = true;
             }
+
+
         }
+
     }
 
     public void StartDialogo()
