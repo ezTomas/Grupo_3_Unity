@@ -31,6 +31,8 @@ public class Movimiento : MonoBehaviour
     public Slider staminaBar;
 
 
+    private Misiones misiones;
+
     public float velocidad = 15f;
     public CharacterController controller;
 
@@ -54,6 +56,7 @@ public class Movimiento : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
+        misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
     }
 
 
@@ -98,6 +101,14 @@ public class Movimiento : MonoBehaviour
         if (stamina < 35)
         {
             stamina += 0.2f * Time.fixedDeltaTime;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Granja") && misiones.misione == 1)
+        {
+            misiones.misione += 1;
         }
     }
 }

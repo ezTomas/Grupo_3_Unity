@@ -20,11 +20,15 @@ public class DetectorLibrosyVelas : MonoBehaviour
 
     public Color colorAro = Color.lightGreen;
 
+    private Misiones misiones;
+
     void Start()
     {
         cameraMain = transform.Find("Main Camera");
 
         enteCodigo = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
+
+        misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
 
         numeroLibrosUI.enabled = false;
         numeroVelasUI.enabled = false;
@@ -75,6 +79,9 @@ public class DetectorLibrosyVelas : MonoBehaviour
         if (numeroLibros == 4 && numeroVelas == 6)
         {
             guardarMetricas();
+
+            misiones.misione += 1;
+
         }
 
     }
