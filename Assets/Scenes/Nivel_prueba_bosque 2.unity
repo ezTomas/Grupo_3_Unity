@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
+  m_Fog: 1
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.08
@@ -17248,15 +17248,15 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ae498bf6aa94b5b4e94590f081dabc56, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 446749928}
+      addedObject: {fileID: 446749932}
   m_SourcePrefab: {fileID: 100100000, guid: ae498bf6aa94b5b4e94590f081dabc56, type: 3}
 --- !u!1 &446749927 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ae498bf6aa94b5b4e94590f081dabc56, type: 3}
   m_PrefabInstance: {fileID: 446749926}
   m_PrefabAsset: {fileID: 0}
---- !u!136 &446749928
-CapsuleCollider:
+--- !u!64 &446749932
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -17273,11 +17273,10 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.09181253
-  m_Height: 0.18362503
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0.018104926}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5120906115499407723, guid: ae498bf6aa94b5b4e94590f081dabc56, type: 3}
 --- !u!1 &451082258
 GameObject:
   m_ObjectHideFlags: 0
@@ -26590,7 +26589,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 0
-  m_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 1}
+  m_Color: {r: 0.28235295, g: 0.28235295, b: 0.28235295, a: 1}
   m_Intensity: 2000
   m_Range: 120
   m_SpotAngle: 98.55057
@@ -27424,6 +27423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0c9b15edc79be24d93f5cfa2878e198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Camera: {fileID: 1210120644}
   jugador: {fileID: 1620850010}
   modo: 0
   cronometro: 0
@@ -52093,7 +52093,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 127
+    m_Bits: 119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -54965,7 +54965,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8865001, y: 0.923702}
   m_AnchorMax: {x: 0.9165, y: 0.9783113}
-  m_AnchoredPosition: {x: 7.4000244, y: 15.899963}
+  m_AnchoredPosition: {x: 7.4000244, y: 15.899948}
   m_SizeDelta: {x: 11.560047, y: -36.14342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308542850
@@ -69498,11 +69498,11 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 3
   m_Height: 2
-  m_Radius: 0.3
+  m_Radius: 2
   m_SlopeLimit: 0
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1620850023
 MonoBehaviour:

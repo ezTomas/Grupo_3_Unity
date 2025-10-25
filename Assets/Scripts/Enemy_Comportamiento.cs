@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 
 public class enemigo : MonoBehaviour
 {
+    public Camera Camera;
     public Transform jugador;
     public int modo;
     public float cronometro;
@@ -61,6 +62,13 @@ public class enemigo : MonoBehaviour
                 transform.Translate(Vector3.forward * 1 * Time.deltaTime * 10);
                 break;
 
+            case 3:
+
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
+                transform.Translate(Vector3.forward * 1 * Time.deltaTime * 10);
+                Camera.main.cullingMask.
+                
+                break;
 
         }
     }
