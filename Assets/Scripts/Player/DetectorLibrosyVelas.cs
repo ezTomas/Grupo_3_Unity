@@ -30,11 +30,11 @@ public class DetectorLibrosyVelas : MonoBehaviour
 
         misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
 
-        numeroLibrosUI.enabled = false;
+        /*numeroLibrosUI.enabled = false;
         numeroVelasUI.enabled = false;
 
         libro.enabled = false;
-        vela.enabled = false;
+        vela.enabled = false;*/
 
 
     }
@@ -48,11 +48,15 @@ public class DetectorLibrosyVelas : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance, LayerMask.GetMask("Libros")) && libro.enabled) 
+        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance) && libro.enabled) 
         {
 
-            numeroLibros += 1;
-            Destroy(hit.collider.gameObject);
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Libros"))
+            {
+                numeroLibros += 1;
+                Destroy(hit.collider.gameObject);
+            }
+
 
             if (numeroLibros == 4)
             {
@@ -62,11 +66,13 @@ public class DetectorLibrosyVelas : MonoBehaviour
 
         }
 
-        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance, LayerMask.GetMask("Velas")) && vela.enabled)
+        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance) && vela.enabled)
         {
-
-            numeroVelas += 1;
-            Destroy(hit.collider.gameObject);
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Velas"))
+            {
+                numeroVelas += 1;
+                Destroy(hit.collider.gameObject);
+            }
 
             if (numeroVelas == 6)
             {
