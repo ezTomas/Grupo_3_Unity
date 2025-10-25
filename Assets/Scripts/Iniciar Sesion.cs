@@ -18,8 +18,6 @@ public class IniciarSesion : MonoBehaviour
 
         tiempoDeJuego = Time.unscaledDeltaTime;
 
-        Debug.Log(tiempoDeJuego);
-
         Metricas.Instance.RegistrarEvento("Tiempo de Juego", tiempoDeJuego);
         
     }
