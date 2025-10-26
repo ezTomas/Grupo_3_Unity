@@ -1,8 +1,9 @@
-using UnityEngine;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.AI;
 
 public class enemigo : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class enemigo : MonoBehaviour
     private bool colision = false;
     private Rigidbody rb;
 
+    public float distancia;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -49,7 +51,7 @@ public class enemigo : MonoBehaviour
             case 1:
                 grado = Random.Range(0, 360);
                 angulo = Quaternion.Euler(0, grado, 0);
-                int pos = Random.Range(-90, 90);
+                int pos = Random.Range(-70, 70);
                 transform.position = new Vector3(Random.Range(jugador.position.x + 30, pos), 0, Random.Range(jugador.position.z + 30, pos));
                 modo++;
                 break;

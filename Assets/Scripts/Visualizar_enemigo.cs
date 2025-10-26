@@ -28,10 +28,10 @@ public class Visualizar_enemigo : MonoBehaviour
         {
             case 0:
                 camara.cullingMask &= ~(1 << capa_enemy);
-                Debug.Log("Enemigo Invisible");
+                
                 break;
             case 1:
-                cronometro_cambio += 4;
+                cronometro_cambio += 2;
                 cronometro += 1 * Time.deltaTime;
                 if (cronometro >= 2)
                 {
@@ -51,7 +51,7 @@ public class Visualizar_enemigo : MonoBehaviour
                         modo--;
                         break;
                 }
-                Debug.Log("Enemigo parpadeo");
+                
                 break;
         }
     }

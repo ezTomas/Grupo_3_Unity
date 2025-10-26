@@ -28,7 +28,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
             tiempoLimite += Time.deltaTime;
             canvasGroup.alpha += Time.deltaTime;
 
-            if (tiempoLimite >= 1)
+            if (tiempoLimite >= 0.5)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
