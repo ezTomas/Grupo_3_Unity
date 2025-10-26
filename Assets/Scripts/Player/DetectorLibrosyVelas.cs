@@ -20,11 +20,15 @@ public class DetectorLibrosyVelas : MonoBehaviour
 
     public Color colorAro = Color.lightGreen;
 
+    private Misiones misiones;
+
     void Start()
     {
         cameraMain = transform.Find("Main Camera");
 
         enteCodigo = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
+
+        misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
 
         numeroLibrosUI.enabled = false;
         numeroVelasUI.enabled = false;
@@ -44,30 +48,36 @@ public class DetectorLibrosyVelas : MonoBehaviour
 
         RaycastHit hit;
 
-        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance, LayerMask.GetMask("Libros")) && libro.enabled) 
+        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance) && libro.enabled) 
         {
 
-            numeroLibros += 1;
-            Destroy(hit.collider.gameObject);
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Libros"))
+            {
+                numeroLibros += 1;
+                Destroy(hit.collider.gameObject);
+            }
+
 
             if (numeroLibros == 4)
             {
                 libro.color = colorAro;
-                numeroLibrosUI.fontMaterial.SetColor("_OutlineColor", colorAro);
+                numeroLibrosUI.color = colorAro;
             }
 
         }
 
-        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance, LayerMask.GetMask("Velas")) && vela.enabled)
+        if (Physics.Raycast(cameraMain.position, cameraMain.forward, out hit, rayDistance) && vela.enabled)
         {
-
-            numeroVelas += 1;
-            Destroy(hit.collider.gameObject);
+            if (hit.collider.gameObject.layer == LayerMask.NameToLayer("Velas"))
+            {
+                numeroVelas += 1;
+                Destroy(hit.collider.gameObject);
+            }
 
             if (numeroVelas == 6)
             {
                 vela.color = colorAro;
-                numeroVelasUI.fontMaterial.SetColor("_OutlineColor", colorAro);
+                numeroVelasUI.color = colorAro;
             }
 
         }
@@ -75,6 +85,9 @@ public class DetectorLibrosyVelas : MonoBehaviour
         if (numeroLibros == 4 && numeroVelas == 6)
         {
             guardarMetricas();
+
+            misiones.misione += 1;
+
         }
 
     }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ItemSwitch : MonoBehaviour
 {
@@ -8,12 +9,25 @@ public class ItemSwitch : MonoBehaviour
 
     private GameObject itemActual;
 
+    [SerializeField] private Image espejo;
+    [SerializeField] private Image celular;
+    [SerializeField] private Image mouseEspejo;
+    [SerializeField] private Image mouseCelular;
+
+    private Color color = new Color(0.4f, 0.4f, 0.4f);
+
     //Sirve para elegir que objeto mostrar al iniciar "1 = Espejo, 2 = Celular"
     public int startIndex = 2;
     public bool seleccionado;
 
     void Start()
     {
+        celular.color = color;
+        espejo.color = color;
+
+        mouseCelular.enabled = false;
+        mouseEspejo.enabled = false;
+
         //Verifica el valor de startIndex para identificar el objeto que se mostrara al iniciar
         // sino mostrara el de valor 1
         if (startIndex == 1 || startIndex == 2)
@@ -38,12 +52,24 @@ public class ItemSwitch : MonoBehaviour
         {
             SelectItem(1);
             seleccionado = true;
+            espejo.color = Color.white;
+            celular.color = color;
+
+            mouseCelular.enabled = false;
+            mouseEspejo.enabled = true;
+
         }
             
         if (Keyboard.current.digit2Key.wasPressedThisFrame)
         {
             SelectItem(2);
             seleccionado = false;
+            celular.color = Color.white;
+            espejo.color = color;
+
+            mouseCelular.enabled = true;
+            mouseEspejo.enabled = false;
+
         }
             
     }

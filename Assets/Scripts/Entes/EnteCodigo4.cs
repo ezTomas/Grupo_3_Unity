@@ -1,9 +1,10 @@
 
-using UnityEngine;
-using UnityEngine.Video;
-using TMPro;
 using System.Collections;
+using TMPro;
+using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.Video;
+using static UnityEditor.PlayerSettings;
 
 
 public class EnteCodigo4 : MonoBehaviour
@@ -24,6 +25,8 @@ public class EnteCodigo4 : MonoBehaviour
 
 
     private EnteCodigo enteNumeroOrigin;
+
+    private Misiones misiones;
 
     private bool isPlayerinRange;
 
@@ -49,6 +52,8 @@ public class EnteCodigo4 : MonoBehaviour
         enteTercero.gameObject.SetActive(false);
 
         dialogoMark.SetActive(false);
+
+        misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
     }
 
     void Update()
@@ -70,6 +75,7 @@ public class EnteCodigo4 : MonoBehaviour
                 enteNumeroOrigin.enteNumero += 1;
                 enteTercero.gameObject.SetActive(false);
                 enteOrigin.SetActive(true);
+                misiones.misione += 1;
             }
 
         }
