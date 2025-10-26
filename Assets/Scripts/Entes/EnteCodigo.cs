@@ -27,8 +27,9 @@ public class EnteCodigo : MonoBehaviour
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
 
-    //misiones
+
     private Misiones misiones;
+
 
     private bool isPlayerinRange;
 

@@ -1,11 +1,13 @@
-using UnityEngine;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using JetBrains.Annotations;
 using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.AI;
 
 public class enemigo : MonoBehaviour
 {
+    public Camera Camara;
     public Transform jugador;
     public int modo;
     public float cronometro;
@@ -15,6 +17,7 @@ public class enemigo : MonoBehaviour
     private bool colision = false;
     private Rigidbody rb;
 
+    public float distancia;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -25,7 +28,6 @@ public class enemigo : MonoBehaviour
             {
                 jugador = player.transform;
             }
-            
         }
     }
 
@@ -45,50 +47,18 @@ public class enemigo : MonoBehaviour
         switch (modo)
         {
             case 0:
-                
                 break;
             case 1:
                 grado = Random.Range(0, 360);
                 angulo = Quaternion.Euler(0, grado, 0);
-                int pos = Random.Range(-90, 90);
+                int pos = Random.Range(-70, 70);
                 transform.position = new Vector3(Random.Range(jugador.position.x + 30, pos), 0, Random.Range(jugador.position.z + 30, pos));
-                
                 modo++;
                 break;
             case 2:
-                
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
                 transform.Translate(Vector3.forward * 1 * Time.deltaTime * 10);
                 break;
-
-
         }
     }
-  /*  private void OnTriggerEnter(Collider other)
-    {
-        if (colision == true)
-        {
-            int pos = Random.Range(-90, 90);
-            transform.position = new Vector3(Random.Range(jugador.position.x, pos), 2, Random.Range(jugador.position.z, pos));
-
-            Debug.Log("oli");
-
-            if (other.CompareTag("Objetos"))
-            {
-                colision = true;
-            }
-            else
-            {
-                colision = false;
-            }
-
-            if (other.CompareTag("objetos"))
-            {
-                int posx = Random.Range(-90, 90);
-                transform.position = new Vector3(Random.Range(jugador.position.x, posx), 2, Random.Range(jugador.position.z, posx));
-                Debug.Log("hola");
-            }
-
-        }
-    }*/
 }

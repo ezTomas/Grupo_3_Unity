@@ -1,11 +1,13 @@
 using UnityEngine;
 
+
 public class Interaccion_Candado : MonoBehaviour
 {
 
     public bool player_on = false;
     public GameObject Interfaz;
     public GameObject Interaccion;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
