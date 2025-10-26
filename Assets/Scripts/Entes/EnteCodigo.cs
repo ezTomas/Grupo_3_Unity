@@ -20,6 +20,7 @@ public class EnteCodigo : MonoBehaviour
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
 
+    
 
     private bool isPlayerinRange;
 

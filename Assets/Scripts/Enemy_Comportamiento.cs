@@ -15,7 +15,6 @@ public class enemigo : MonoBehaviour
     public Transform objetos;
     private bool colision = false;
     private Rigidbody rb;
-    
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
