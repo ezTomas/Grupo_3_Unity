@@ -47,8 +47,8 @@ public class EnteCodigo : MonoBehaviour
     float dotProductResult;
 
     //Velas
-    public GameObject velasApagadas;
-    public GameObject velasPrendidas;
+    public GameObject velasApagadasParent;
+    public GameObject velasPrendidasParent;
 
     private bool velasEncendidas = false;
 
@@ -62,13 +62,17 @@ public class EnteCodigo : MonoBehaviour
         misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
 
         //Velas apagadas al inicio
-        foreach (var vela in velasApagadas)
-            vela.SetActive(true);
+        if (velasApagadasParent != null)
+        {
+            foreach (Transform vela in velasApagadasParent.transform)
+                vela.gameObject.SetActive(true);
+        }
 
-        foreach (var vela in velasPrendidas)
-            vela.SetActive(false);
-
-
+        if (velasPrendidasParent != null)
+        {
+            foreach (Transform vela in velasPrendidasParent.transform)
+                vela.gameObject.SetActive(false);
+        }
     }
 
     void Update()
@@ -101,6 +105,9 @@ public class EnteCodigo : MonoBehaviour
 
             }
         }
+
+
+
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
         {
             dialogoPanel.SetActive(true);
@@ -126,20 +133,20 @@ public class EnteCodigo : MonoBehaviour
 
                 misiones.misione += 1;
 
-                    PrenderVelas();
+                PrenderVelas();
             }
 
 
         }
 
         //Muestra al ente
-        if (velasEncendidas)
+        if (velasEncendidas && velasPrendidasParent != null)
         {
-            foreach (var vela in velasPrendidas)
+            foreach (Transform vela in velasPrendidasParent.transform)
             {
-                Vector3 dir = originEnte.position - vela.transform.position;
+                Vector3 dir = originEnte.position - vela.position;
                 Quaternion rot = Quaternion.LookRotation(dir);
-                vela.transform.rotation = Quaternion.Lerp(vela.transform.rotation, rot, Time.deltaTime * 2f);
+                vela.rotation = Quaternion.Lerp(vela.rotation, rot, Time.deltaTime * 2f);
             }
         }
 
@@ -236,6 +243,42 @@ public class EnteCodigo : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         isPlayerinRange = false;
+    }
+
+
+    //Control de las velas
+    private void PrenderVelas()
+    {
+        if (velasApagadasParent != null)
+        {
+            foreach (Transform vela in velasApagadasParent.transform)
+                vela.gameObject.SetActive(false);
+        }
+
+        if (velasPrendidasParent != null)
+        {
+            foreach (Transform vela in velasPrendidasParent.transform)
+                vela.gameObject.SetActive(true);
+        }
+
+        velasEncendidas = true;
+    }
+
+    private void ApagarVelas()
+    {
+        if (velasApagadasParent != null)
+        {
+            foreach (Transform vela in velasApagadasParent.transform)
+                vela.gameObject.SetActive(true);
+        }
+
+        if (velasPrendidasParent != null)
+        {
+            foreach (Transform vela in velasPrendidasParent.transform)
+                vela.gameObject.SetActive(false);
+        }
+
+        velasEncendidas = false;
     }
 }
 
