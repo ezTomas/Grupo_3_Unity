@@ -46,6 +46,12 @@ public class EnteCodigo : MonoBehaviour
     bool cameraLooking;
     float dotProductResult;
 
+    //Velas
+    public GameObject velasApagadas;
+    public GameObject velasPrendidas;
+
+    private bool velasEncendidas = false;
+
 
     private void Start()
     {
@@ -54,6 +60,13 @@ public class EnteCodigo : MonoBehaviour
         dialogoMark.SetActive(false);
 
         misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
+
+        //Velas apagadas al inicio
+        foreach (var vela in velasApagadas)
+            vela.SetActive(true);
+
+        foreach (var vela in velasPrendidas)
+            vela.SetActive(false);
 
 
     }
@@ -84,6 +97,7 @@ public class EnteCodigo : MonoBehaviour
                 dialogoStar = false;
 
                 misiones.misione += 1;
+
             }
         }
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
