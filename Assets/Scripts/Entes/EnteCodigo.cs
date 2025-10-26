@@ -98,6 +98,7 @@ public class EnteCodigo : MonoBehaviour
 
                 misiones.misione += 1;
 
+
             }
         }
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
@@ -124,9 +125,28 @@ public class EnteCodigo : MonoBehaviour
                 detector.numeroVelasUI.enabled = true;
 
                 misiones.misione += 1;
+
+                    PrenderVelas();
             }
 
 
+        }
+
+        //Muestra al ente
+        if (velasEncendidas)
+        {
+            foreach (var vela in velasPrendidas)
+            {
+                Vector3 dir = originEnte.position - vela.transform.position;
+                Quaternion rot = Quaternion.LookRotation(dir);
+                vela.transform.rotation = Quaternion.Lerp(vela.transform.rotation, rot, Time.deltaTime * 2f);
+            }
+        }
+
+        //Apaga las velas
+        if (velasEncendidas && misiones.misione > 6)
+        {
+            ApagarVelas();
         }
 
     }
