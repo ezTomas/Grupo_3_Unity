@@ -30,11 +30,11 @@ public class DetectorLibrosyVelas : MonoBehaviour
 
         misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
 
-        /*numeroLibrosUI.enabled = false;
+        numeroLibrosUI.enabled = false;
         numeroVelasUI.enabled = false;
 
         libro.enabled = false;
-        vela.enabled = false;*/
+        vela.enabled = false;
 
 
     }
