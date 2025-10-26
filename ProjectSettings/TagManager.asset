@@ -11,6 +11,7 @@ TagManager:
   - Objetos
   - 83
   - 64
+  - Granja
   layers:
   - Default
   - TransparentFX
@@ -21,8 +22,8 @@ TagManager:
   - Arbol
   - Ente
   - Player
-  - 
-  - 
+  - Libros
+  - Velas
   - 
   - 
   - 

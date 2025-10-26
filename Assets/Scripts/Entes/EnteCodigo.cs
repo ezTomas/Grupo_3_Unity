@@ -12,7 +12,14 @@ public class EnteCodigo : MonoBehaviour
     public int enteNumero = 0;
     public Transform lookingCameraTransform;
 
+    //Metricas
+    public Timer myTimer;
+
+    //Ver al ente con espejo
     private UtilidadDeEspejo espejo;
+
+    //habilitar la deteccion de velas y libros
+    private DetectorLibrosyVelas detector;
 
     // DIALOGO
     [SerializeField] private GameObject dialogoMark;
@@ -20,7 +27,9 @@ public class EnteCodigo : MonoBehaviour
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
 
-    
+
+    private Misiones misiones;
+
 
     private bool isPlayerinRange;
 
@@ -41,7 +50,12 @@ public class EnteCodigo : MonoBehaviour
     private void Start()
     {
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
+        detector = GameObject.Find("Player").GetComponent<DetectorLibrosyVelas>();
         dialogoMark.SetActive(false);
+
+        misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
+
+
     }
 
     void Update()
@@ -51,6 +65,8 @@ public class EnteCodigo : MonoBehaviour
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 1)
         {
             dialogoPanel.SetActive(true);
+
+            myTimer.StartTimer();
 
             if (!dialogoStar)
             {
@@ -66,6 +82,8 @@ public class EnteCodigo : MonoBehaviour
                 originEnte.gameObject.SetActive(false);
                 dialogoPanel.SetActive(false);
                 dialogoStar = false;
+
+                misiones.misione += 1;
             }
         }
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
@@ -84,8 +102,19 @@ public class EnteCodigo : MonoBehaviour
                 originEnte.gameObject.SetActive(false);
                 dialogoPanel.SetActive(false);
                 dialogoStar = false;
+
+                detector.libro.enabled = true;
+                detector.vela.enabled = true;
+
+                detector.numeroLibrosUI.enabled = true;
+                detector.numeroVelasUI.enabled = true;
+
+                misiones.misione += 1;
             }
+
+
         }
+
     }
 
     public void StartDialogo()
