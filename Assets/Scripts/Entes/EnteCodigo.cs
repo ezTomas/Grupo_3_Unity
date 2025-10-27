@@ -264,12 +264,7 @@ public class EnteCodigo : MonoBehaviour
                 vela.gameObject.SetActive(true);
         }
 
-        if (velasPrendidasParent != null)
-        { 
-            foreach (Transform vela in velasPrendidasParent.transform)
-                vela.gameObject.SetActive(false);
-        }
-
+       
         velasEncendidas = false;
     }
 }
