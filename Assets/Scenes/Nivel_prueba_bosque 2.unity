@@ -23112,7 +23112,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.034709707, g: 0.23267505, b: 0.68235296, a: 1}
+  m_Color: {r: 1, g: 0.8927559, b: 0, a: 1}
   m_Intensity: 6.91
   m_Range: 19.04
   m_SpotAngle: 30
@@ -23157,7 +23157,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
   m_ColorTemperature: 16277
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -45279,7 +45279,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.075293556, g: 0.2889604, b: 0.8867924, a: 1}
+  m_Color: {r: 1, g: 0.97236633, b: 0, a: 1}
   m_Intensity: 7
   m_Range: 19.04
   m_SpotAngle: 30
@@ -45324,7 +45324,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
   m_ColorTemperature: 6167
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -58870,6 +58870,8 @@ MonoBehaviour:
     Solo recuerdo esto y no los numeros. Espero que puedas escapar.
   entePrimero: {fileID: 1399886256}
   sensitivity: 0.4
+  velasApagadasParent: {fileID: 1294556919}
+  velasPrendidasParent: {fileID: 251504790}
 --- !u!136 &1353568373
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -59152,7 +59154,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.075827554, g: 0.35668677, b: 0.8930817, a: 1}
+  m_Color: {r: 1, g: 0.9049736, b: 0, a: 1}
   m_Intensity: 6.91
   m_Range: 19.04
   m_SpotAngle: 30
@@ -59197,7 +59199,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
   m_ColorTemperature: 5328
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -71451,7 +71453,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0, g: 0.29803923, b: 0.8392157, a: 1}
+  m_Color: {r: 1, g: 0.91114444, b: 0, a: 1}
   m_Intensity: 6.91
   m_Range: 19.04
   m_SpotAngle: 30
@@ -71496,7 +71498,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
   m_ColorTemperature: 8559
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -72249,7 +72251,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0, g: 0.22503413, b: 0.7484276, a: 1}
+  m_Color: {r: 1, g: 0.8418494, b: 0.009433806, a: 1}
   m_Intensity: 6.91
   m_Range: 19.04
   m_SpotAngle: 30
@@ -72294,7 +72296,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 0
   m_ColorTemperature: 7670
-  m_UseColorTemperature: 1
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
