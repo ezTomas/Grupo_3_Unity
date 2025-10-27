@@ -140,8 +140,10 @@ public class EnteCodigo : MonoBehaviour
 
                 misiones.misione += 1;
 
-                if (caminoVelas1 != null) caminoVelas1.SetActive(false);
-                if (caminoVelas2 != null) caminoVelas2.SetActive(true);
+                caminoVelas1?.SetActive(false);
+                caminoVelas2?.SetActive(true);
+
+                enteNumero += 1;
             }
 
         }
