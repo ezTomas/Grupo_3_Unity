@@ -111,7 +111,7 @@ public class EnteCodigo : MonoBehaviour
 
                 if (caminoVelas1 != null) caminoVelas1.SetActive(true);
                 PrenderVelas();
-                InclinarVelasHaciaEnte();
+               
             }
         }
 
@@ -141,12 +141,12 @@ public class EnteCodigo : MonoBehaviour
                 detector.numeroVelasUI.enabled = true;
 
                 misiones.misione += 1;
-                ApagarVelas();
+                
 
                 if (caminoVelas1 != null) caminoVelas1.SetActive(false);
                 if (caminoVelas2 != null) caminoVelas2.SetActive(true);
                 PrenderVelas();
-                InclinarVelasHaciaEnte();
+           
 
                 enteNumero += 1;
 
@@ -275,17 +275,7 @@ public class EnteCodigo : MonoBehaviour
         velasEncendidas = false;
     }
      
-    private void InclinarVelasHaciaEnte()
-    {
-        if (velasPrendidasParent != null)
-        {
-            foreach (Transform vela in velasPrendidasParent.transform)
-            {
-            Vector3 direccion = originEnte.position - vela.position;
-            vela.rotation = Quaternion.LookRotation(direccion);
-            }
-        }
-    }
+    
 
 }
 

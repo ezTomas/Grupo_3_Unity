@@ -65053,6 +65053,8 @@ MonoBehaviour:
   linesDialogo:
   - "Este bosque... maldito dicen muchos, tal vez tengan raz\xF3n, sino no deberia
     estar aqui."
+  caminoVelas1: {fileID: 264317810}
+  caminoVelas2: {fileID: 2102893891}
   sensitivity: 0.4
 --- !u!136 &1399886258
 CapsuleCollider:

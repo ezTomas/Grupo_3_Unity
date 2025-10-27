@@ -31,6 +31,8 @@ public class EnteCodigo2 : MonoBehaviour
     private int lineIndex;
     //Dialogo
 
+    public GameObject caminoVelas1;
+    public GameObject caminoVelas2;
 
     [Range(0f, 1f)]
     public float sensitivity = 0.4f;
@@ -60,6 +62,7 @@ public class EnteCodigo2 : MonoBehaviour
             if (!dialogoStar)
             {
                 StartDialogo();
+                caminoVelas1.SetActive(false);
             }
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
@@ -69,6 +72,7 @@ public class EnteCodigo2 : MonoBehaviour
                 enteNumeroOrigin.enteNumero += 1;
                 entePrimero.gameObject.SetActive(false);
                 enteSegundo.SetActive(true);
+                caminoVelas2.SetActive(true);
             }
 
         }
