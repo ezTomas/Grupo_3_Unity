@@ -52,6 +52,11 @@ public class EnteCodigo : MonoBehaviour
 
     private bool velasEncendidas = false;
 
+    public GameObject caminoVelas1;
+    public GameObject caminoVelas2;
+    public GameObject caminoVelas3;
+
+
 
     private void Start()
     {
@@ -68,11 +73,12 @@ public class EnteCodigo : MonoBehaviour
                 vela.gameObject.SetActive(true);
         }
 
-        if (velasPrendidasParent != null)
-        {
-            foreach (Transform vela in velasPrendidasParent.transform)
-                vela.gameObject.SetActive(false);
-        }
+        if (velasPrendidasParent != null) 
+            velasPrendidasParent.SetActive(false);
+
+        if (caminoVelas1 != null) caminoVelas1.SetActive(false);
+        if (caminoVelas2 != null) caminoVelas2.SetActive(false);
+        if (caminoVelas3 != null) caminoVelas3.SetActive(false);
     }
 
     void Update()
@@ -90,6 +96,7 @@ public class EnteCodigo : MonoBehaviour
                 StartDialogo();
             }
 
+
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
@@ -102,7 +109,7 @@ public class EnteCodigo : MonoBehaviour
 
                 misiones.misione += 1;
 
-
+                if (caminoVelas1 != null) caminoVelas1.SetActive(true);
             }
         }
 
@@ -133,27 +140,10 @@ public class EnteCodigo : MonoBehaviour
 
                 misiones.misione += 1;
 
-                PrenderVelas();
+                if (caminoVelas1 != null) caminoVelas1.SetActive(false);
+                if (caminoVelas2 != null) caminoVelas2.SetActive(true);
             }
 
-
-        }
-
-        //Muestra al ente
-        if (velasEncendidas && velasPrendidasParent != null)
-        {
-            foreach (Transform vela in velasPrendidasParent.transform)
-            {
-                Vector3 dir = originEnte.position - vela.position;
-                Quaternion rot = Quaternion.LookRotation(dir);
-                vela.rotation = Quaternion.Lerp(vela.rotation, rot, Time.deltaTime * 2f);
-            }
-        }
-
-        //Apaga las velas
-        if (velasEncendidas && misiones.misione > 6)
-        {
-            ApagarVelas();
         }
 
     }
@@ -273,7 +263,7 @@ public class EnteCodigo : MonoBehaviour
         }
 
         if (velasPrendidasParent != null)
-        {
+        { 
             foreach (Transform vela in velasPrendidasParent.transform)
                 vela.gameObject.SetActive(false);
         }
