@@ -46,6 +46,17 @@ public class EnteCodigo : MonoBehaviour
     bool cameraLooking;
     float dotProductResult;
 
+    //Velas
+    public GameObject velasApagadasParent;
+    public GameObject velasPrendidasParent;
+
+    private bool velasEncendidas = false;
+
+    public GameObject caminoVelas1;
+    public GameObject caminoVelas2;
+    public GameObject caminoVelas3;
+
+
 
     private void Start()
     {
@@ -55,7 +66,19 @@ public class EnteCodigo : MonoBehaviour
 
         misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
 
+        //Velas apagadas al inicio
+        if (velasApagadasParent != null)
+        {
+            foreach (Transform vela in velasApagadasParent.transform)
+                vela.gameObject.SetActive(true);
+        }
 
+        if (velasPrendidasParent != null) 
+            velasPrendidasParent.SetActive(true);
+
+        if (caminoVelas1 != null) caminoVelas1.SetActive(false);
+        if (caminoVelas2 != null) caminoVelas2.SetActive(false);
+        if (caminoVelas3 != null) caminoVelas3.SetActive(false);
     }
 
     void Update()
@@ -73,6 +96,7 @@ public class EnteCodigo : MonoBehaviour
                 StartDialogo();
             }
 
+
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
@@ -84,8 +108,15 @@ public class EnteCodigo : MonoBehaviour
                 dialogoStar = false;
 
                 misiones.misione += 1;
+
+                if (caminoVelas1 != null) caminoVelas1.SetActive(true);
+                PrenderVelas();
+               
             }
         }
+
+
+
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
         {
             dialogoPanel.SetActive(true);
@@ -110,8 +141,17 @@ public class EnteCodigo : MonoBehaviour
                 detector.numeroVelasUI.enabled = true;
 
                 misiones.misione += 1;
-            }
+                
 
+                if (caminoVelas1 != null) caminoVelas1.SetActive(false);
+                if (caminoVelas2 != null) caminoVelas2.SetActive(true);
+                PrenderVelas();
+           
+
+                enteNumero += 1;
+
+                ApagarVelas();
+            }
 
         }
 
@@ -203,5 +243,39 @@ public class EnteCodigo : MonoBehaviour
     {
         isPlayerinRange = false;
     }
+
+
+    //Control de las velas
+    private void PrenderVelas()
+    {
+        if (velasApagadasParent != null)
+        {
+            foreach (Transform vela in velasApagadasParent.transform)
+                vela.gameObject.SetActive(false);
+        }
+
+        if (velasPrendidasParent != null)
+        {
+            foreach (Transform vela in velasPrendidasParent.transform)
+                vela.gameObject.SetActive(true);
+        }
+
+        velasEncendidas = true;
+    }
+
+    private void ApagarVelas()
+    {
+        if (velasApagadasParent != null)
+        {
+            foreach (Transform vela in velasApagadasParent.transform)
+                vela.gameObject.SetActive(true);
+        }
+
+       
+        velasEncendidas = false;
+    }
+     
+    
+
 }
 
