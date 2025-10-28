@@ -35,6 +35,7 @@ public class EnteCodigo4 : MonoBehaviour
     private int lineIndex;
     //Dialogo
 
+    public GameObject caminoVelas3;
 
     [Range(0f, 1f)]
     public float sensitivity = 0.4f;
@@ -66,6 +67,7 @@ public class EnteCodigo4 : MonoBehaviour
             if (!dialogoStar)
             {
                 StartDialogo();
+                caminoVelas3.SetActive(false);
             }
 
             else if (textoDialogo.text == linesDialogo[lineIndex])

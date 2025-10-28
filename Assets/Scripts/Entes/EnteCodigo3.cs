@@ -30,6 +30,8 @@ public class EnteCodigo3 : MonoBehaviour
     private int lineIndex;
     //Dialogo
 
+    public GameObject caminoVelas2;
+    public GameObject caminoVelas3;
 
     [Range(0f, 1f)]
     public float sensitivity = 0.4f;
@@ -59,6 +61,7 @@ public class EnteCodigo3 : MonoBehaviour
             if (!dialogoStar)
             {
                 StartDialogo();
+                caminoVelas2.SetActive(false);
             }
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
@@ -68,6 +71,7 @@ public class EnteCodigo3 : MonoBehaviour
                 enteNumeroOrigin.enteNumero += 1;
                 enteSegundo.gameObject.SetActive(false);
                 enteTercero.gameObject.SetActive(true);
+                caminoVelas3.SetActive(true);
             }
 
         }
