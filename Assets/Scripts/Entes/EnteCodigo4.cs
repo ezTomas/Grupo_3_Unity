@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Video;
-using static UnityEditor.PlayerSettings;
+
 
 
 public class EnteCodigo4 : MonoBehaviour
