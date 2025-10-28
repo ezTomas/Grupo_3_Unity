@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Movimiento_Camara : MonoBehaviour
 {
-    public float sensibilidad = 10f;
+    public float sensibilidad = 0f;
     float Rotacionx = 0f;
     public Transform Jugador;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
