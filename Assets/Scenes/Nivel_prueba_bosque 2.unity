@@ -14,7 +14,7 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 1
+  m_Fog: 0
   m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 2
   m_FogDensity: 0.056
@@ -6901,7 +6901,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino (7)
@@ -12201,7 +12201,7 @@ Transform:
   m_GameObject: {fileID: 332345527}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 6.4, z: -5.2}
+  m_LocalPosition: {x: -6.2, y: 6.4, z: -3.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12246,7 +12246,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.07021064, g: 0.11093451, b: 0.8930817, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -19904,7 +19904,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino2 (5)
@@ -23225,7 +23225,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.07021064, g: 0.11093451, b: 0.8930817, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -24430,7 +24430,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino3 (1)
@@ -27798,7 +27798,7 @@ Transform:
   m_GameObject: {fileID: 716757328}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 11.4, z: -4.52}
+  m_LocalPosition: {x: -0.4, y: 11.4, z: -3.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -27843,7 +27843,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.01993577, g: 0.10204519, b: 0.9056604, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -28104,7 +28104,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.07021064, g: 0.11093451, b: 0.8930817, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -32734,7 +32734,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino3 (5)
@@ -32983,7 +32983,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino2 (4)
@@ -39385,7 +39385,7 @@ Transform:
   m_GameObject: {fileID: 932050201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 7.9, z: -5.7}
+  m_LocalPosition: {x: -0, y: 7.9, z: -3.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39430,7 +39430,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.07021064, g: 0.11093451, b: 0.8930817, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -47765,7 +47765,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.01993577, g: 0.10204519, b: 0.9056604, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -47995,7 +47995,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.07021064, g: 0.11093451, b: 0.8930817, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -53686,7 +53686,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino2 (7)
@@ -54854,7 +54854,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.058344048, g: 0.084278576, b: 0.74213827, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -55091,7 +55091,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino3 (7)
@@ -57988,7 +57988,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.07021064, g: 0.11093451, b: 0.8930817, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -73572,7 +73572,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino (4)
@@ -77517,7 +77517,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 0.058344048, g: 0.084278576, b: 0.74213827, a: 1}
+  m_Color: {r: 0, g: 0, b: 0.7490196, a: 1}
   m_Intensity: 50
   m_Range: 50
   m_SpotAngle: 30
@@ -80109,7 +80109,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino2 (1)
@@ -83519,7 +83519,7 @@ PrefabInstance:
     - target: {fileID: -804731622281664130, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: b1796337c4bed2a418589b61fda48b78, type: 2}
+      objectReference: {fileID: 2100000, guid: adcc03127f9e93742a495cc146f739d1, type: 2}
     - target: {fileID: 919132149155446097, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
       propertyPath: m_Name
       value: Vela_camino
