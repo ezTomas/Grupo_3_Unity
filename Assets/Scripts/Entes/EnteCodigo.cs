@@ -144,7 +144,6 @@ public class EnteCodigo : MonoBehaviour
                 
 
                 if (caminoVelas1 != null) caminoVelas1.SetActive(false);
-                if (caminoVelas2 != null) caminoVelas2.SetActive(true);
                 PrenderVelas();
            
 
