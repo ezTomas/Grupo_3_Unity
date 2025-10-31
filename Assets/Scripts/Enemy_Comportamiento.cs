@@ -39,7 +39,7 @@ public class enemigo : MonoBehaviour
     public void Comportamiento_Enemigo()
     {
         cronometro += 1 * Time.deltaTime;
-        if (cronometro >= 4)
+        if (cronometro >= 5)
         {
             modo = Random.Range(0, 3);
             cronometro = 0;
@@ -51,8 +51,8 @@ public class enemigo : MonoBehaviour
             case 1:
                 grado = Random.Range(0, 360);
                 angulo = Quaternion.Euler(0, grado, 0);
-                int pos = Random.Range(-70, 70);
-                transform.position = new Vector3(Random.Range(jugador.position.x + 30, pos), 0, Random.Range(jugador.position.z + 30, pos));
+                int pos = Random.Range(-60, 60);
+                transform.position = new Vector3(Random.Range(jugador.position.x + 10, pos), 0, Random.Range(jugador.position.z + 10, pos));
                 modo++;
                 break;
             case 2:

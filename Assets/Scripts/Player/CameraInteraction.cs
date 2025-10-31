@@ -9,7 +9,7 @@ public class CamaraInteraction : MonoBehaviour
     private CanvasGroup canvasGroup;
 
 
-    public float tiempoLimite = 0f;
+    public float tiempoLimite = 0.7f;
     void Start()
     {
         cameraMain = transform.Find("Main Camera");
@@ -33,7 +33,7 @@ public class CamaraInteraction : MonoBehaviour
             else
             {
                 canvasGroup.alpha = 0;
-                tiempoLimite = 0f;
+                tiempoLimite = 0.7f;
             }
 
             if (tiempoLimite >= 1)
