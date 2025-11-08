@@ -36,6 +36,9 @@ public class Movimiento : MonoBehaviour
     public float velocidad = 15f;
     public CharacterController controller;
 
+    public AudioSource walk;
+    public AudioSource run;
+
 
     void Awake()
     {
@@ -62,18 +65,9 @@ public class Movimiento : MonoBehaviour
 
     void Update()
     {
-
-        float movimientoX = Input.GetAxis("Horizontal");
-        float movimientoZ = Input.GetAxis("Vertical");
-
-        Vector3 movimiento = transform.right * movimientoX + transform.forward * movimientoZ;
-
+        caminar();
         correr();
         recarga_stamina();
-
-        Vector3 mover = transform.right * movimientoX + transform.forward * movimientoZ;
-
-        controller.Move(mover * velocidad * Time.deltaTime);
 
         if (staminaBar != null)
         {
@@ -110,6 +104,18 @@ public class Movimiento : MonoBehaviour
         {
             misiones.misione += 1;
         }
+    }
+
+    private void caminar()
+    {
+
+        float movimientoX = Input.GetAxis("Horizontal");
+        float movimientoZ = Input.GetAxis("Vertical");
+        walk.Play();
+
+        Vector3 mover = transform.right * movimientoX + transform.forward * movimientoZ;
+        controller.Move(mover * velocidad * Time.deltaTime);
+        
     }
 }
 
