@@ -38,7 +38,7 @@ public class Movimiento : MonoBehaviour
 
     public AudioSource walk;
     public AudioSource run;
-
+    public Transform piso_madera;
 
     void Awake()
     {
@@ -73,7 +73,8 @@ public class Movimiento : MonoBehaviour
         {
             staminaBar.value = stamina;
         }
-
+        sound_walk();
+            
     }
 
     private void correr()
@@ -111,12 +112,26 @@ public class Movimiento : MonoBehaviour
 
         float movimientoX = Input.GetAxis("Horizontal");
         float movimientoZ = Input.GetAxis("Vertical");
-        walk.Play();
+        
 
         Vector3 mover = transform.right * movimientoX + transform.forward * movimientoZ;
         controller.Move(mover * velocidad * Time.deltaTime);
         
+
     }
+
+    public void sound_walk()
+    {
+        if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.A))
+        {
+            walk.Play();
+        }
+        if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.A))
+        {
+            walk.Stop();
+        }
+    }
+
 }
 
 
