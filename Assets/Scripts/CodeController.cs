@@ -5,7 +5,7 @@ public class CodeController : MonoBehaviour
 
 {
     public Canvas ochoTres;
-    public Canvas seisCuatro;
+
 
     public TextMeshPro numero83;
     public TextMeshPro numero64;
@@ -14,7 +14,7 @@ public class CodeController : MonoBehaviour
     {
 
        ochoTres.enabled = false;
-       seisCuatro.enabled = false;
+
 
        numero64.enabled = true;
        numero83.enabled = true;
@@ -30,7 +30,6 @@ public class CodeController : MonoBehaviour
 
         if (other.CompareTag("64"))
         {
-            seisCuatro.enabled = true;
             numero64.enabled = false;
         }
     }

@@ -62,7 +62,7 @@ public class EnteCodigo4 : MonoBehaviour
 
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 4 && enteVisto == true)
+        if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)
         {
             if (!dialogoStar)
             {
@@ -78,6 +78,7 @@ public class EnteCodigo4 : MonoBehaviour
                 enteTercero.gameObject.SetActive(false);
                 enteOrigin.SetActive(true);
                 misiones.misione += 1;
+                enteNumeroOrigin.caminoVelas2.SetActive(false);
             }
 
         }

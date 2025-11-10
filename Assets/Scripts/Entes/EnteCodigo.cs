@@ -52,9 +52,8 @@ public class EnteCodigo : MonoBehaviour
 
     private bool velasEncendidas = false;
 
-    public GameObject caminoVelas1;
     public GameObject caminoVelas2;
-    public GameObject caminoVelas3;
+
 
 
 
@@ -76,9 +75,8 @@ public class EnteCodigo : MonoBehaviour
         if (velasPrendidasParent != null) 
             velasPrendidasParent.SetActive(true);
 
-        if (caminoVelas1 != null) caminoVelas1.SetActive(false);
         if (caminoVelas2 != null) caminoVelas2.SetActive(false);
-        if (caminoVelas3 != null) caminoVelas3.SetActive(false);
+
     }
 
     void Update()
@@ -109,7 +107,7 @@ public class EnteCodigo : MonoBehaviour
 
                 misiones.misione += 1;
 
-                if (caminoVelas1 != null) caminoVelas1.SetActive(true);
+                if (caminoVelas2 != null) caminoVelas2.SetActive(true);
                 PrenderVelas();
                
             }
@@ -117,7 +115,7 @@ public class EnteCodigo : MonoBehaviour
 
 
 
-        else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 5)
+        else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 3)
         {
             dialogoPanel.SetActive(true);
 
@@ -141,15 +139,9 @@ public class EnteCodigo : MonoBehaviour
                 detector.numeroVelasUI.enabled = true;
 
                 misiones.misione += 1;
-                
-
-                if (caminoVelas1 != null) caminoVelas1.SetActive(false);
-                PrenderVelas();
-           
 
                 enteNumero += 1;
 
-                ApagarVelas();
             }
 
         }
