@@ -50,8 +50,6 @@ public class EnteCodigo : MonoBehaviour
     public GameObject velasApagadasParent;
     public GameObject velasPrendidasParent;
 
-    private bool velasEncendidas = false;
-
     public GameObject caminoVelas2;
 
 
@@ -251,7 +249,6 @@ public class EnteCodigo : MonoBehaviour
                 vela.gameObject.SetActive(true);
         }
 
-        velasEncendidas = true;
     }
 
     private void ApagarVelas()
@@ -263,7 +260,7 @@ public class EnteCodigo : MonoBehaviour
         }
 
        
-        velasEncendidas = false;
+
     }
      
     
