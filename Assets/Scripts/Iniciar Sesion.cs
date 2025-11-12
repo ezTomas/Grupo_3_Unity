@@ -9,7 +9,7 @@ public class IniciarSesion : MonoBehaviour
     {
         Metricas.Instance.IniciarSesion("Juan Pablo");
 
-
+        Screen.SetResolution(1280, 720, false);
     }
 
     // Update is called once per frame

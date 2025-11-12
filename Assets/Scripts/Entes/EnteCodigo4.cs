@@ -35,7 +35,6 @@ public class EnteCodigo4 : MonoBehaviour
     private int lineIndex;
     //Dialogo
 
-    public GameObject caminoVelas3;
 
     [Range(0f, 1f)]
     public float sensitivity = 0.4f;
@@ -62,12 +61,12 @@ public class EnteCodigo4 : MonoBehaviour
 
         CheckIfCameraIsLooking();
 
-        if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 4 && enteVisto == true)
+        if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)
         {
             if (!dialogoStar)
             {
                 StartDialogo();
-                caminoVelas3.SetActive(false);
+            
             }
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
@@ -78,6 +77,7 @@ public class EnteCodigo4 : MonoBehaviour
                 enteTercero.gameObject.SetActive(false);
                 enteOrigin.SetActive(true);
                 misiones.misione += 1;
+                enteNumeroOrigin.caminoVelas2.SetActive(false);
             }
 
         }

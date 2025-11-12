@@ -39,7 +39,7 @@ public class enemigo : MonoBehaviour
     public void Comportamiento_Enemigo()
     {
         cronometro += 1 * Time.deltaTime;
-        if (cronometro >= 10)
+        if (cronometro >= 5)
         {
             modo = Random.Range(0, 3);
             cronometro = 0;

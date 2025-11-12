@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
-    private Transform camera;
+    private new Transform camera;
     public float rayDistance;
     public GameObject gameOver;
     private CanvasGroup canvasGroup;

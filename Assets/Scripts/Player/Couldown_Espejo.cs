@@ -12,7 +12,6 @@ public class Couldown_Espejo : MonoBehaviour
     public float temporizadorJumpScare = 0f;
     private float limiteJumpScare = 2f;
 
-    private float couldownLimite = 0f;
     public float couldownEspejo = 30f;
     public bool couldown = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
