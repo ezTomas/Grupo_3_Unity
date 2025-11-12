@@ -19,7 +19,7 @@ public class Visualizar_enemigo : MonoBehaviour
     void Update()
     {
         cronometro_cambio += 1 * Time.deltaTime;
-        if (cronometro_cambio >= 10)
+        if (cronometro_cambio >= 8)
         {
             modo_cambio = Random.Range(0, 2);
             cronometro_cambio = 0;
