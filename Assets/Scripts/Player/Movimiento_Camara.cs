@@ -6,8 +6,7 @@ public class Movimiento_Camara : MonoBehaviour
     public float sensibilidad = 0f;
     float Rotacionx = 0f;
     public Transform Jugador;
-
-
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -24,6 +23,6 @@ public class Movimiento_Camara : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(Rotacionx, 0f,0f);
         Jugador.Rotate(Vector3.up * MouseX);
-        
+
     }
 }
