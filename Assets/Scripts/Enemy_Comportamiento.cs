@@ -51,13 +51,13 @@ public class enemigo : MonoBehaviour
             case 1:
                 grado = Random.Range(0, 360);
                 angulo = Quaternion.Euler(0, grado, 0);
-                int pos = Random.Range(-60, 60);
+                int pos = Random.Range(-35, 35);
                 transform.position = new Vector3(Random.Range(jugador.position.x + 10, pos), 0, Random.Range(jugador.position.z + 10, pos));
                 modo++;
                 break;
             case 2:
                 transform.rotation = Quaternion.RotateTowards(transform.rotation, angulo, 0.5f);
-                transform.Translate(Vector3.forward * 1 * Time.deltaTime * 10);
+                transform.Translate(Vector3.forward * 1 * Time.deltaTime * 5);
                 break;
         }
     }
