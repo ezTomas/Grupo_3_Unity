@@ -2,25 +2,26 @@ using System.Globalization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Couldown_Espejo : MonoBehaviour
 {
-    public GameObject negro;
+    [SerializeField] private Image jumpScare;
     [SerializeField] private TextMeshPro tiempo;
 
     private bool activadoJumpScare = false;
     public float temporizadorEspejo = 0f;
-    private float tiempoLimiteEspejo = 20f;
+    private float tiempoLimiteEspejo = 17f;
 
     public float temporizadorJumpScare = 0f;
     private float limiteJumpScare = 2f;
 
-    public float couldownEspejo = 25f;
+    public float couldownEspejo = 12f;
     public bool couldown = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-    
+        jumpScare.enabled = false;
         tiempo.enabled = false;
     }
 
@@ -33,34 +34,29 @@ public class Couldown_Espejo : MonoBehaviour
             couldownEspejo -= Time.deltaTime;
             tiempo.enabled = true;
 
-
             if (couldownEspejo <= 0f)
             {
                 couldown = false;
-                couldownEspejo = 30f;
+                couldownEspejo = 12f;
                 tiempo.enabled = false;
             }
         }
-        if (!couldown && Mouse.current.rightButton.isPressed)
+        if (!couldown && Mouse.current.rightButton.isPressed && temporizadorEspejo >= 0)
         {
             temporizadorEspejo += Time.deltaTime;
         }
-        else if (!couldown && Mouse.current.leftButton.isPressed)
+
+        else
         {
-            temporizadorEspejo += Time.deltaTime;
-        }
-            else
-        {
-            if (!activadoJumpScare)
+            if (!activadoJumpScare && temporizadorEspejo >= 1)
             {
-                temporizadorEspejo = 0f;
+                temporizadorEspejo -= Time.deltaTime / 2;
             }
         }
 
         if (temporizadorEspejo >= tiempoLimiteEspejo && !activadoJumpScare && !couldown)
         {
             activadoJumpScare = true;
-            negro.SetActive(true);
             temporizadorJumpScare = 0f;
             couldown = true;
         }
@@ -68,13 +64,14 @@ public class Couldown_Espejo : MonoBehaviour
 
         if (activadoJumpScare)
         {
+            jumpScare.enabled = true;
             temporizadorJumpScare += Time.deltaTime;
 
             if (temporizadorJumpScare >= limiteJumpScare)
             {
-                negro.SetActive(false);
                 activadoJumpScare = false;
                 temporizadorEspejo = 0f;
+                jumpScare.enabled = false;
             }
         }
     }
