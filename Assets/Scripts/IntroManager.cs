@@ -5,13 +5,13 @@ using TMPro;
 public class IntroManager : MonoBehaviour
 {
     [Header("Referencias")]
-    public GameObject introCanvas;     // Canvas de la intro
-    public GameObject gameplay;        // Contenedor del juego
-    public TextMeshProUGUI textoTMP;   // Texto de la intro
+    public GameObject introCanvas;   
+    public GameObject gameplay;        
+    public TextMeshProUGUI textoTMP;   
 
     [Header("Opciones")]
     public float velocidadTipeo = 0.03f;
-    public CanvasGroup canvasGroup;    // Para fade in/out
+    public CanvasGroup canvasGroup;    
 
     private string[] lineas =
     {

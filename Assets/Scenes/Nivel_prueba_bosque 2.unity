@@ -58793,22 +58793,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "El protagonista, ha escuchado la historias de la Luz Mala toda su vida,
-    pero nunca les dio importancia. Hasta que, una noche, durante una reuni\xF3n
-    con amigos, surge un reto: entrar al bosque y comprobar si la \u201Cluz mala\u201D
-    existe de verdad.\r\nCon celular en mano y la valent\xEDa que da el orgullo,
-    se adentra solo entre los \xE1rboles. Al principio, todo parece normal. El canto
-    de los grillos, el crujido de las ramas, el viento moviendo las hojas\u2026\r\n
-    Pero de pronto, una luz aparece entre la niebla. Peque\xF1a, distante, casi hipn\xF3tica.
-    Se mueve lentamente, como si lo invitara a seguirla.\r\nY as\xED comienza su
-    traves\xEDa.\r\n Una noche que parec\xEDa un simple reto se convertir\xE1 en
-    una pesadilla donde nada es lo que parece. El bosque cambia, los caminos desaparecen,
-    y el silencio esconde algo que lo observa desde la oscuridad.\r\nAhora, el jugador
-    deber\xE1 explorar y descubrir la verdad detr\xE1s del mito antes de que la \u201Cluz
-    mala\u201D lo consuma tambi\xE9n.\r\nNew Text"
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 13fee2ba2466d434588a3bff326d7aff, type: 2}
-  m_sharedMaterial: {fileID: 1959394684143551004, guid: 13fee2ba2466d434588a3bff326d7aff, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
