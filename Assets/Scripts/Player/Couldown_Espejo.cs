@@ -8,10 +8,11 @@ public class Couldown_Espejo : MonoBehaviour
 {
     [SerializeField] private Image jumpScare;
     [SerializeField] private TextMeshPro tiempo;
+    [SerializeField] private AudioClip jumpSound;
 
     private bool activadoJumpScare = false;
     public float temporizadorEspejo = 0f;
-    private float tiempoLimiteEspejo = 17f;
+    private float tiempoLimiteEspejo = 16f;
 
     public float temporizadorJumpScare = 0f;
     private float limiteJumpScare = 2f;
@@ -23,6 +24,8 @@ public class Couldown_Espejo : MonoBehaviour
     {
         jumpScare.enabled = false;
         tiempo.enabled = false;
+
+        
     }
 
     // Update is called once per frame
@@ -64,6 +67,7 @@ public class Couldown_Espejo : MonoBehaviour
 
         if (activadoJumpScare)
         {
+            AudioController.instance.EjecutarSonido(jumpSound);
             jumpScare.enabled = true;
             temporizadorJumpScare += Time.deltaTime;
 
