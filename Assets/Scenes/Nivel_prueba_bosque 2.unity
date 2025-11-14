@@ -40822,6 +40822,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68567f2bedc78f64b90c36b316ff7b20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  introCanvas: {fileID: 1445844090}
+  gameplay: {fileID: 1632543052}
+  textoTMP: {fileID: 1863891008}
+  velocidadTipeo: 0.03
+  canvasGroup: {fileID: 1445844092}
 --- !u!4 &1314495255
 Transform:
   m_ObjectHideFlags: 0
@@ -45773,6 +45778,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1445844091}
+  - component: {fileID: 1445844092}
   m_Layer: 0
   m_Name: CanvasIntro
   m_TagString: Untagged
@@ -45796,6 +45802,18 @@ Transform:
   - {fileID: 1995378615}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!225 &1445844092
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445844090}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1446000667
 GameObject:
   m_ObjectHideFlags: 0
@@ -58775,7 +58793,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: "El protagonista, ha escuchado la historias de la Luz Mala toda su vida,
+    pero nunca les dio importancia. Hasta que, una noche, durante una reuni\xF3n
+    con amigos, surge un reto: entrar al bosque y comprobar si la \u201Cluz mala\u201D
+    existe de verdad.\r\nCon celular en mano y la valent\xEDa que da el orgullo,
+    se adentra solo entre los \xE1rboles. Al principio, todo parece normal. El canto
+    de los grillos, el crujido de las ramas, el viento moviendo las hojas\u2026\r\n
+    Pero de pronto, una luz aparece entre la niebla. Peque\xF1a, distante, casi hipn\xF3tica.
+    Se mueve lentamente, como si lo invitara a seguirla.\r\nY as\xED comienza su
+    traves\xEDa.\r\n Una noche que parec\xEDa un simple reto se convertir\xE1 en
+    una pesadilla donde nada es lo que parece. El bosque cambia, los caminos desaparecen,
+    y el silencio esconde algo que lo observa desde la oscuridad.\r\nAhora, el jugador
+    deber\xE1 explorar y descubrir la verdad detr\xE1s del mito antes de que la \u201Cluz
+    mala\u201D lo consuma tambi\xE9n.\r\nNew Text"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -58802,15 +58832,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 28
+  m_fontSizeBase: 28
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
