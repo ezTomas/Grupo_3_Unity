@@ -16,7 +16,7 @@ public class IntroManager : MonoBehaviour
     private string[] lineas =
     {
         "El protagonista, ha escuchado la historias de la Luz Mala toda su vida, pero nunca les dio importancia. Hasta que, una noche, durante una reunión con amigos, surge un reto: entrar al bosque y comprobar si la “luz mala” existe de verdad.\r\nCon celular en mano y la valentía que da el orgullo, se adentra solo entre los árboles. Al principio, todo parece normal. El canto de los grillos, el crujido de las ramas, el viento moviendo las hojas…\r\n Pero de pronto, una luz aparece entre la niebla. Pequeña, distante, casi hipnótica. Se mueve lentamente, como si lo invitara a seguirla.\r\nY así comienza su travesía.\r\n Una noche que parecía un simple reto se convertirá en una pesadilla donde nada es lo que parece. El bosque cambia, los caminos desaparecen, y el silencio esconde algo que lo observa desde la oscuridad.\r\nAhora, el jugador deberá explorar y descubrir la verdad detrás del mito antes de que la “luz mala” lo consuma también.\r\n"
-    }
+    };
 
     private int indiceLinea = 0;
     private bool escribiendo = false;
