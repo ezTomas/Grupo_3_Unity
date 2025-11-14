@@ -12,6 +12,8 @@ public class EnteCodigo : MonoBehaviour
     public int enteNumero = 0;
     public Transform lookingCameraTransform;
 
+    public Pensamientos pensamientoSystem;
+
     //Metricas
     public Timer myTimer;
 
@@ -83,6 +85,8 @@ public class EnteCodigo : MonoBehaviour
 
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 1)
         {
+            pensamientoSystem.DesactivarPensamientos();
+
             dialogoPanel.SetActive(true);
 
             myTimer.StartTimer();
@@ -107,7 +111,8 @@ public class EnteCodigo : MonoBehaviour
 
                 if (caminoVelas2 != null) caminoVelas2.SetActive(true);
                 PrenderVelas();
-               
+
+                pensamientoSystem.ActivarPensamientos();
             }
         }
 
@@ -115,6 +120,9 @@ public class EnteCodigo : MonoBehaviour
 
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 3)
         {
+
+            pensamientoSystem.DesactivarPensamientos();
+
             dialogoPanel.SetActive(true);
 
             if (!dialogoStar)
@@ -139,6 +147,8 @@ public class EnteCodigo : MonoBehaviour
                 misiones.misione += 1;
 
                 enteNumero += 1;
+
+                pensamientoSystem.ActivarPensamientos();
 
             }
 
