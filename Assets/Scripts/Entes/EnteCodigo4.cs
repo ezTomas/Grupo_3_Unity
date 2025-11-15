@@ -12,7 +12,6 @@ public class EnteCodigo4 : MonoBehaviour
     public Transform enteTercero;
     private bool enteVisto = false;
     public Transform lookingCameraTransform;
-    public Pensamientos pensamientoSystem;
 
     private UtilidadDeEspejo espejo;
 
@@ -64,8 +63,6 @@ public class EnteCodigo4 : MonoBehaviour
 
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)
         {
-            pensamientoSystem.DesactivarPensamientos();
-
             if (!dialogoStar)
             {
                 StartDialogo();
@@ -81,8 +78,6 @@ public class EnteCodigo4 : MonoBehaviour
                 enteOrigin.SetActive(true);
                 misiones.misione += 1;
                 enteNumeroOrigin.caminoVelas2.SetActive(false);
-
-                pensamientoSystem.ActivarPensamientos();
             }
 
         }
