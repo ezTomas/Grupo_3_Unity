@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Nivel_prueba_bosque.unity
-    guid: ba6bb7573c63de843a1ca444300dacef
+  - enabled: 1
+    path: Assets/Scenes/Menu_Principal.unity
+    guid: cc2bcd735caca674aa5138c6b23372e6
   - enabled: 1
     path: Assets/Scenes/Nivel_prueba_bosque 2.unity
     guid: 6ed6c1fe3ffdf9143842dcf489c3d3d4
