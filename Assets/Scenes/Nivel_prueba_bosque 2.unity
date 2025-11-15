@@ -2553,6 +2553,7 @@ MonoBehaviour:
   - Aca esta la salida. Llego el momento de ayudarte, vuelve a la casa y te digo
     como saber dos numeros de este candado.
   sensitivity: 0.4
+  pensamientoSystem: {fileID: 0}
 --- !u!136 &91238351
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -18432,6 +18433,70 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.012976465, y: 0.17573062, z: 0.122894675}
   m_Center: {x: 0, y: -0.007328391, z: -0.0009671636}
+--- !u!1 &653204868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653204869}
+  - component: {fileID: 653204870}
+  m_Layer: 0
+  m_Name: PensamientosController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &653204869
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653204868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1816549233}
+  m_Father: {fileID: 777546282}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &653204870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653204868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee4ddd6cd760034688e8f70df76c4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pensamientos
+  contorno: {fileID: 1816549232}
+  textoPensamiento: {fileID: 1982449702}
+  tiempoMin: 5
+  tiempoMax: 12
+  velocidadTipeo: 0.2
+  tiempoVisible: 3
+  pensamientos:
+  - "\xBFY si ya no hay salida?"
+  - Tengo que mantener la calma, solo es un bosque
+  - Dios, siento que alguien me observa y acecha constantemente
+  - "Mi padres y abuelos dec\xEDan que quien viera la luz no volvia a la civilizaci\xF3n,
+    pero solo son tonterias \xBFno?"
+  - "Siempre que escuchaba sobre este mito pens\xE9 que era mentira, ahora veo\r\nque
+    no."
+  - "No puedo creer que haya aceptado este reto\u2026"
 --- !u!1001 &653291975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23372,7 +23437,7 @@ RectTransform:
   - {fileID: 1194544544}
   - {fileID: 1938948431}
   - {fileID: 2114162298}
-  - {fileID: 1816549233}
+  - {fileID: 653204869}
   m_Father: {fileID: 1620850010}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -42215,6 +42280,7 @@ MonoBehaviour:
   velasApagadasParent: {fileID: 1294556919}
   velasPrendidasParent: {fileID: 291589677}
   caminoVelas2: {fileID: 2102893891}
+  pensamientoSystem: {fileID: 0}
 --- !u!136 &1353568373
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -57398,7 +57464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1816549233
 RectTransform:
   m_ObjectHideFlags: 0
@@ -57407,18 +57473,18 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816549232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.000010471749}
-  m_LocalScale: {x: 0.9060022, y: 0.9060022, z: 0.9060022}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0001}
+  m_LocalScale: {x: 0.9060022, y: 0.90600216, z: 0.9060022}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1982449701}
-  m_Father: {fileID: 777546282}
+  m_Father: {fileID: 653204869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 83, y: 43.332947}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 8.0538, y: -163.32954}
+  m_SizeDelta: {x: 478.8211, y: 74.2171}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1816549234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57432,7 +57498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 0.392}
+  m_Color: {r: 0.2924528, g: 0.2924528, b: 0.2924528, a: 0.56078434}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -60842,7 +60908,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1938948430}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -61887,10 +61953,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -61914,8 +61980,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -61952,7 +62018,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -113.973915, y: 0, z: -125.19056, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
