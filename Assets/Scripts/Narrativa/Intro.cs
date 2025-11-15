@@ -26,11 +26,14 @@ public class Intro : MonoBehaviour
 
     void Start()
     {
-        skip.enabled = true;
+        if (IntroController.introVista == false)
+        {
+            skip.enabled = true;
+            introCanvas.enabled = true;
+            StartCoroutine(Introduccion());
+            IntroController.introVista = true;
+        }
 
-        introCanvas.enabled = true;    
-
-        StartCoroutine(Introduccion());
     }
 
 
