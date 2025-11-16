@@ -10,7 +10,10 @@ public class GameOver : MonoBehaviour
 
     public void MenuPrincipal()
     {
+        Metricas.Instance.Guardar();
+        Debug.Log("Guardado");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 2);
+
     }
 
     public void Reintentar()
