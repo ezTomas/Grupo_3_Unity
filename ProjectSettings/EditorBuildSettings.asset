@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Nivel_prueba_bosque 2.unity
     guid: 6ed6c1fe3ffdf9143842dcf489c3d3d4
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 49d26f297c0b3be469e9e2fca46ec2d0
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
