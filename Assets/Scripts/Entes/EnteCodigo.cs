@@ -27,9 +27,7 @@ public class EnteCodigo : MonoBehaviour
     [SerializeField] private TMP_Text textoDialogo;
     [SerializeField, TextArea(4, 6)] private string[] linesDialogo;
 
-
     private Misiones misiones;
-
 
     private bool isPlayerinRange;
 
@@ -49,10 +47,10 @@ public class EnteCodigo : MonoBehaviour
     //Velas
     public GameObject velasApagadasParent;
     public GameObject velasPrendidasParent;
-
     public GameObject caminoVelas2;
 
-
+    //pensamiento
+    public Pensamientos pensamientoSystem;
 
 
     private void Start()
@@ -87,6 +85,8 @@ public class EnteCodigo : MonoBehaviour
 
             myTimer.StartTimer();
 
+            pensamientoSystem.DesactivarPensamientos();
+
             if (!dialogoStar)
             {
                 StartDialogo();
@@ -105,6 +105,8 @@ public class EnteCodigo : MonoBehaviour
 
                 misiones.misione += 1;
 
+                pensamientoSystem.ActivarPensamientos();
+
                 if (caminoVelas2 != null) caminoVelas2.SetActive(true);
                 PrenderVelas();
                
@@ -116,6 +118,8 @@ public class EnteCodigo : MonoBehaviour
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 3)
         {
             dialogoPanel.SetActive(true);
+
+            pensamientoSystem.DesactivarPensamientos();
 
             if (!dialogoStar)
             {
@@ -140,6 +144,7 @@ public class EnteCodigo : MonoBehaviour
 
                 enteNumero += 1;
 
+                pensamientoSystem.ActivarPensamientos();
             }
 
         }

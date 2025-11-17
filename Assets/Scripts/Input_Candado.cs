@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Input_Candado : MonoBehaviour
 {
@@ -27,8 +28,8 @@ public class Input_Candado : MonoBehaviour
         if (t == "8364")
         {
             GameObject.SetActive(false);
-            Application.Quit();
-            
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+
         }
     }
 }

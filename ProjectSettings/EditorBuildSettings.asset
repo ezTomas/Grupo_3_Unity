@@ -5,12 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Nivel_prueba_bosque.unity
-    guid: ba6bb7573c63de843a1ca444300dacef
+  - enabled: 1
+    path: Assets/Scenes/Menu_Principal.unity
+    guid: cc2bcd735caca674aa5138c6b23372e6
   - enabled: 1
     path: Assets/Scenes/Nivel_prueba_bosque 2.unity
     guid: 6ed6c1fe3ffdf9143842dcf489c3d3d4
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 49d26f297c0b3be469e9e2fca46ec2d0
+  - enabled: 1
+    path: Assets/Scenes/Victory.unity
+    guid: 2948e3886f564fe4a9aab15f7e832d8f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -40,7 +40,7 @@ public class CamaraInteraction : MonoBehaviour
             {
                 Metricas.Instance.RegistrarEvento("Muertes", 1f);
 
-                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
 
         }

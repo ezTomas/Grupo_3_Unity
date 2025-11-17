@@ -41,7 +41,9 @@ public class EnteCodigo4 : MonoBehaviour
     Vector3 forwardVectorTowardsCamera;
     bool cameraLooking;
     float dotProductResult;
-
+    
+    // Pensamiento
+    public Pensamientos pensamientoSystem;
 
     private void Start()
     {
@@ -63,6 +65,8 @@ public class EnteCodigo4 : MonoBehaviour
 
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)
         {
+            pensamientoSystem.DesactivarPensamientos();
+
             if (!dialogoStar)
             {
                 StartDialogo();
@@ -78,6 +82,8 @@ public class EnteCodigo4 : MonoBehaviour
                 enteOrigin.SetActive(true);
                 misiones.misione += 1;
                 enteNumeroOrigin.caminoVelas2.SetActive(false);
+
+                pensamientoSystem.ActivarPensamientos();
             }
 
         }
