@@ -34,6 +34,7 @@ public class Sound_ambient : MonoBehaviour
                 break;
             case 1:
                 sound_a.Play();
+                sound_b.Play();
                 break;
             case 2:
                 sound_b.Play();
