@@ -14,7 +14,6 @@ public class enemigo : MonoBehaviour
     private float grado;
     private Quaternion angulo;
     public Transform objetos;
-    private bool colision = false;
     private Rigidbody rb;
 
     public float distancia;

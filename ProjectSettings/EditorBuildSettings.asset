@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu_Principal.unity
     guid: cc2bcd735caca674aa5138c6b23372e6
   - enabled: 1
+    path: Assets/Scenes/Controles.unity
+    guid: 62896a8c028236a42af9d75d3332c10a
+  - enabled: 1
     path: Assets/Scenes/Nivel_prueba_bosque 2.unity
     guid: 6ed6c1fe3ffdf9143842dcf489c3d3d4
   - enabled: 1

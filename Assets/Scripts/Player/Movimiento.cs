@@ -24,7 +24,7 @@ public class Movimiento : MonoBehaviour
 
     public Camera playerCamera;
     public float mouseSensitivity = 0.2f;
-    private float xRotation = 0f;
+
 
     //Estamina
 

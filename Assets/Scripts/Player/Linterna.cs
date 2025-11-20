@@ -12,7 +12,6 @@ public class Linterna : MonoBehaviour
     {
         luzLinterna.enabled = false;
 
-
     }
     private void Update()
     {
@@ -22,10 +21,8 @@ public class Linterna : MonoBehaviour
             
             if (linternaActiva == true)
             {
-
-                Metricas.Instance.RegistrarEvento("Uso Linterna", 1f);
                 luzLinterna.enabled = true;
-
+                Metricas.Instance.RegistrarEvento("Uso Linterna", 1f);
 
             }
 

@@ -7,7 +7,6 @@ public class IniciarSesion : MonoBehaviour
 
     void Start()
     {
-        Metricas.Instance.IniciarSesion("Juan Pablo");
 
         Screen.SetResolution(1280, 720, false);
     }

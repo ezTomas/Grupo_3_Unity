@@ -14435,7 +14435,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Encuentra los libros y velas '
+  m_text: Encuentra los libros y velas (hasta que sean verdes)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
@@ -14500,7 +14500,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 51.659424, w: 6.2763977}
+  m_margin: {x: -3.6016083, y: 0, z: 48.95817, w: 6.2763977}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -20972,7 +20972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Busca la granja
+  m_text: Busca la granja en el bosque
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
@@ -21308,6 +21308,7 @@ GameObject:
   m_Component:
   - component: {fileID: 735689738}
   - component: {fileID: 735689737}
+  - component: {fileID: 735689739}
   m_Layer: 0
   m_Name: Timer
   m_TagString: Untagged
@@ -21342,6 +21343,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735689739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735689736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f61202f2551a8f4f95c570367b35df5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IniciarSesion
 --- !u!1001 &736969596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31551,7 +31564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Vuelve a la granja
+  m_text: Vuelve a la casa
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
@@ -40254,10 +40267,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 401244265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.7165, y: 0.9213415}
-  m_AnchorMax: {x: 0.7515, y: 0.9783113}
-  m_AnchoredPosition: {x: 8.600006, y: 9.799988}
-  m_SizeDelta: {x: 7.5600433, y: -37.14342}
+  m_AnchorMin: {x: 0.7165, y: 0.89900005}
+  m_AnchorMax: {x: 0.7802501, y: 0.9783113}
+  m_AnchoredPosition: {x: 15.1, y: 8.9}
+  m_SizeDelta: {x: -15.439957, y: -46.14342}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1308542850
 MonoBehaviour:
@@ -40279,7 +40292,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 83
+  m_text: 8   3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
@@ -40306,8 +40319,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 41.2
+  m_fontSizeBase: 41.2
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -40598,7 +40611,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Encuentra y habla con el ente (Usa tu espejo)
+  m_text: Encuentra y habla con el ente de la casa(Usa tu espejo)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
@@ -44567,9 +44580,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Usa tu numero para escapar
-
-'
+  m_text: "Usa tus 4 numero en el candado para escapar  \n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
@@ -59765,63 +59776,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 546297670}
   m_SourcePrefab: {fileID: 100100000, guid: 5827fac57b1ba394e9be0561d4d9f010, type: 3}
---- !u!1 &1958938677
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1958938678}
-  - component: {fileID: 1958938679}
-  - component: {fileID: 1958938680}
-  m_Layer: 0
-  m_Name: Metricas Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1958938678
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958938677}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -30.09361, y: -3.79436, z: 12.30978}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1958938679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958938677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef921614515341c4789ad429889caf94, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Metricas
---- !u!114 &1958938680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1958938677}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f61202f2551a8f4f95c570367b35df5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IniciarSesion
 --- !u!1001 &1963494541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63846,7 +63800,6 @@ SceneRoots:
   - {fileID: 931659185}
   - {fileID: 774366980}
   - {fileID: 570815317}
-  - {fileID: 1958938678}
   - {fileID: 735689738}
   - {fileID: 678709990}
   - {fileID: 1706153040}
