@@ -28,10 +28,15 @@ public class Intro : MonoBehaviour
     {
         if (IntroController.introVista == false)
         {
-            skip.enabled = true;
             introCanvas.enabled = true;
             StartCoroutine(Introduccion());
             IntroController.introVista = true;
+        }
+        else
+        {
+            skip.gameObject.SetActive(false);
+            introCanvas.enabled = false;
+
         }
 
     }

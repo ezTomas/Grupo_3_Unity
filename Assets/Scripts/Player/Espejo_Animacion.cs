@@ -6,7 +6,7 @@ public class UtilidadDeEspejo : MonoBehaviour
 {
     public Transform espejo1;
     public Camera camara;
-    private Metricas metricas;
+
 
 
     [Header("Original Position")]
@@ -29,7 +29,6 @@ public class UtilidadDeEspejo : MonoBehaviour
         couldown = GetComponent<Couldown_Espejo>();
         camara.gameObject.SetActive(false);
         usoEspejo = false;
-        metricas = GameObject.Find("Metricas Manager").GetComponent<Metricas>();
     }
 
     void Update()

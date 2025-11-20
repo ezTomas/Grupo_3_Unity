@@ -168,10 +168,10 @@ public class Metricas : MonoBehaviour
     }
 
     // Guarda automáticamente al cerrar el juego
+
     private void OnApplicationQuit()
     {
         Guardar();
-        Debug.Log("Guardado");
     }
 
 }

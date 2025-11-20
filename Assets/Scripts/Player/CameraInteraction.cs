@@ -38,9 +38,8 @@ public class CamaraInteraction : MonoBehaviour
 
             if (tiempoLimite >= 1)
             {
-                Metricas.Instance.RegistrarEvento("Muertes", 1f);
-
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+                Metricas.Instance.RegistrarEvento("Muertes", 1f);
             }
 
         }
