@@ -30,7 +30,7 @@ public class EnteCodigo4 : MonoBehaviour
 
     private bool isPlayerinRange;
 
-    private float tiempoTexto = 0.05f;
+    private float tiempoTexto = 0.03f;
     private bool dialogoStar;
     private int lineIndex;
     //Dialogo
@@ -67,27 +67,24 @@ public class EnteCodigo4 : MonoBehaviour
 
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)
         {
-            pensamientoSystem.DesactivarPensamientos();
-
-
 
             if (!dialogoStar)
             {
                 StartDialogo();
-            
+                GameObject.Find("Player").GetComponent<Movimiento>().puedeMoverse = false;
             }
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 Time.timeScale = 1f;
                 NextDialogoLine();
+                GameObject.Find("Player").GetComponent<Movimiento>().puedeMoverse = true;
                 enteNumeroOrigin.enteNumero += 1;
                 enteTercero.gameObject.SetActive(false);
                 enteOrigin.SetActive(true);
                 misiones.misione += 1;
                 enteNumeroOrigin.caminoVelas2.SetActive(false);
 
-                pensamientoSystem.ActivarPensamientos();
             }
 
         }

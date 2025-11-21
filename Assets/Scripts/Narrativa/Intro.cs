@@ -54,7 +54,7 @@ public class Intro : MonoBehaviour
             else
             {
                 SiguienteLinea();
-                Time.timeScale = 1f;
+
             }
         }
     }
@@ -114,6 +114,7 @@ public class Intro : MonoBehaviour
         if (indiceLinea >= lineas.Length)
         {
             StartCoroutine(FinalizarIntro());
+            Time.timeScale = 1f;
         }
         else
         {

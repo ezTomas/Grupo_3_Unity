@@ -5,7 +5,7 @@ public class Linterna : MonoBehaviour
 {
     public Light luzLinterna;
     public bool linternaActiva;
-
+    private Misiones misiones;
 
 
     private void Start()
@@ -33,7 +33,23 @@ public class Linterna : MonoBehaviour
         }
 
     }
-}
+
+      private void OnTriggerEnter(Collider other)
+      {
+           if (other.gameObject.CompareTag("Valla"))
+           {
+             if (misiones.misione <= 1)
+                 {
+                 misiones.misione += 1;
+                  }
+            
+
+           }
+        }
+
+
+
+    }
 
 
 

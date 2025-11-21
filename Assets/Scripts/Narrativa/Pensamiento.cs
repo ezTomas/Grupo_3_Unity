@@ -37,7 +37,7 @@ public class Pensamientos : MonoBehaviour
         {
             if (activo && !mostrando && pensamientos.Length > 0)
             {
-                yield return new WaitForSeconds(Random.Range(tiempoMin, tiempoMax));
+                yield return new WaitForSecondsRealtime(Random.Range(tiempoMin, tiempoMax));
                 if (activo) MostrarPensamientoAleatorio();
             }
             yield return null;
@@ -67,10 +67,10 @@ public class Pensamientos : MonoBehaviour
         foreach (char c in texto)
         {
             textoPensamiento.text += c;
-            yield return new WaitForSeconds(velocidadTipeo);
+            yield return new WaitForSecondsRealtime(velocidadTipeo);
         }
 
-        yield return new WaitForSeconds(tiempoVisible);
+        yield return new WaitForSecondsRealtime(tiempoVisible);
 
         contorno.SetActive(false);
         mostrando = false;
@@ -103,12 +103,13 @@ public class Pensamientos : MonoBehaviour
         cicloPensamientos = StartCoroutine(PensarCadaTanto());
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Casa"))
         {
+            Debug.Log("Entro");
             DesactivarPensamientos();
-            StopAllCoroutines();
+            Debug.Log("Entro2");
         }
 
         

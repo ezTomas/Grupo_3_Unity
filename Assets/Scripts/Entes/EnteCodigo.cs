@@ -9,7 +9,7 @@ using UnityEngine.Rendering;
 public class EnteCodigo : MonoBehaviour
 {
     public Transform originEnte;
-    public int enteNumero = 0;
+    public int enteNumero = 2;
     public Transform lookingCameraTransform;
 
     //Metricas
@@ -31,7 +31,7 @@ public class EnteCodigo : MonoBehaviour
 
     private bool isPlayerinRange;
 
-    private float tiempoTexto = 0.05f;
+    private float tiempoTexto = 0.03f;
     private bool dialogoStar;
     private int lineIndex;
     //Dialogo
@@ -58,7 +58,7 @@ public class EnteCodigo : MonoBehaviour
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
         detector = GameObject.Find("Player").GetComponent<DetectorLibrosyVelas>();
         dialogoMark.SetActive(false);
-        pensamientoSystem = GameObject.Find("PensamientosController").GetComponent<Pensamientos>();
+        pensamientoSystem = GameObject.Find("Player").GetComponent<Pensamientos>();
         misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
 
         //Velas apagadas al inicio
@@ -81,21 +81,20 @@ public class EnteCodigo : MonoBehaviour
 
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 1)
         {
-            dialogoPanel.SetActive(true);
 
             myTimer.StartTimer();
 
-
             if (!dialogoStar)
             {
+                GameObject.Find("Player").GetComponent<Movimiento>().puedeMoverse = false;
                 StartDialogo();
 
             }
 
-
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
+                GameObject.Find("Player").GetComponent<Movimiento>().puedeMoverse = true;
                 Time.timeScale = 1f;
                 enteNumero += 1;
                 entePrimero.SetActive(true);
@@ -104,8 +103,6 @@ public class EnteCodigo : MonoBehaviour
                 dialogoStar = false;
 
                 misiones.misione += 1;
-
-                pensamientoSystem.ActivarPensamientos();
 
                 if (caminoVelas2 != null) caminoVelas2.SetActive(true);
                 PrenderVelas();
@@ -117,17 +114,17 @@ public class EnteCodigo : MonoBehaviour
 
         else if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumero == 3)
         {
-            dialogoPanel.SetActive(true);
-
-
+            
             if (!dialogoStar)
             {
+                GameObject.Find("Player").GetComponent<Movimiento>().puedeMoverse = false;
                 StartDialogo2();
             }
 
             else if (textoDialogo.text == linesDialogo[lineIndex])
             {
                 NextDialogoLine();
+                GameObject.Find("Player").GetComponent<Movimiento>().puedeMoverse = true;
                 Time.timeScale = 1f;
                 originEnte.gameObject.SetActive(false);
                 dialogoPanel.SetActive(false);
@@ -152,16 +149,17 @@ public class EnteCodigo : MonoBehaviour
 
     public void StartDialogo()
     {
-        Time.timeScale = 0f;
-        dialogoStar = true;
         dialogoPanel.SetActive(true);
+        dialogoStar = true;
         StartCoroutine(ShowLine());
         lineIndex = 0;
+        Time.timeScale = 0f;
 
     }
 
     public void StartDialogo2()
     {
+        dialogoPanel.SetActive(true);
         dialogoStar = true;
         StartCoroutine(ShowLine());
         lineIndex = 1;

@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Movimiento : MonoBehaviour
 {
+    //ente
+    public bool puedeMoverse = true;
+
     //Movimiento y correr
 
     public float walkSpeed = 2f;
@@ -65,6 +68,7 @@ public class Movimiento : MonoBehaviour
 
     void Update()
     {
+        if (!puedeMoverse) return;
         caminar();
         correr();
         recarga_stamina();

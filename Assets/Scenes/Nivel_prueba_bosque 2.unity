@@ -17911,7 +17911,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 653204869}
-  - component: {fileID: 653204870}
   m_Layer: 0
   m_Name: PensamientosController
   m_TagString: Untagged
@@ -17939,33 +17938,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &653204870
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 653204868}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ee4ddd6cd760034688e8f70df76c4a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pensamientos
-  contorno: {fileID: 1816549232}
-  textoPensamiento: {fileID: 1982449702}
-  tiempoMin: 5
-  tiempoMax: 12
-  velocidadTipeo: 0.2
-  tiempoVisible: 3
-  pensamientos:
-  - "\xBFY si ya no hay salida?"
-  - Tengo que mantener la calma, solo es un bosque
-  - Dios, siento que alguien me observa y acecha constantemente
-  - "Mi padres y abuelos dec\xEDan que quien viera la luz no volvia a la civilizaci\xF3n,
-    pero solo son tonterias \xBFno?"
-  - "Siempre que escuchaba sobre este mito pens\xE9 que era mentira, ahora veo\r\nque
-    no."
-  - "No puedo creer que haya aceptado este reto\u2026"
 --- !u!1001 &653291975
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20614,6 +20586,59 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.020000001, y: 0.019999998, z: 0.019999998}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &712555931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 712555932}
+  - component: {fileID: 712555933}
+  m_Layer: 0
+  m_Name: AreaValla
+  m_TagString: Granja
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &712555932
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712555931}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.036100913, z: -0, w: 0.99934816}
+  m_LocalPosition: {x: -83.38, y: -10.05, z: 146.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2069276142}
+  m_LocalEulerAnglesHint: {x: 0, y: -4.138, z: 0}
+--- !u!65 &712555933
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712555931}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 1, z: 275.30188}
+  m_Center: {x: -0.00009889587, y: 0, z: -40.651627}
 --- !u!1001 &713010447
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22371,6 +22396,59 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.039626613, y: 0.030522995, z: 0.14622961}
   m_Center: {x: 0.00033705714, y: -0.0025996661, z: 0.07022319}
+--- !u!1 &762129715
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762129716}
+  - component: {fileID: 762129717}
+  m_Layer: 0
+  m_Name: Area Casa (1)
+  m_TagString: Casa
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &762129716
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762129715}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -381.8, y: 0, z: 24.7}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2069276142}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &762129717
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762129715}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 54.401947, y: 49.226204, z: 46.747757}
+  m_Center: {x: 17.724472, y: 3.6327095, z: 11.699608}
 --- !u!1001 &762191223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27346,10 +27424,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: La cantidad velas vivas y libros te diran dos numeros, para que puedas
+    escapar. Solo recuerdo esto y no los numeros. Espero que puedas escapar.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -27373,8 +27452,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 22
+  m_fontSizeBase: 22
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -27411,10 +27490,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -3.7549438, y: 0, z: 0, w: 0}
+  m_margin: {x: -9.351044, y: -0.7994709, z: -2.3983154, w: -3.997219}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &880153852
@@ -32633,117 +32712,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.03410991, y: 0.03538783, z: 0.15006033}
   m_Center: {x: 0.0009570814, y: -0.0018255722, z: 0.072138704}
---- !u!1 &1055630623
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1055630624}
-  - component: {fileID: 1055630627}
-  - component: {fileID: 1055630626}
-  - component: {fileID: 1055630625}
-  m_Layer: 0
-  m_Name: Area rancho
-  m_TagString: Granja
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!4 &1055630624
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055630623}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.03460888, z: -0, w: 0.999401}
-  m_LocalPosition: {x: 116.100006, y: 0, z: 23.699997}
-  m_LocalScale: {x: 1, y: 1, z: 377.8646}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1622522998}
-  m_LocalEulerAnglesHint: {x: 0, y: -3.967, z: 0}
---- !u!65 &1055630625
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055630623}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1055630626
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055630623}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_ForceMeshLod: -1
-  m_MeshLodSelectionBias: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1055630627
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055630623}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &1056793020
 GameObject:
   m_ObjectHideFlags: 0
@@ -37730,7 +37698,7 @@ MonoBehaviour:
   m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
-  m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
+  m_sharedMaterial: {fileID: 2164040, guid: 7279bd78cbf7cec4795f265a03e8b821, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -37792,10 +37760,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -9.697113, y: 3.3920403, z: 0, w: 0}
+  m_margin: {x: -9.697113, y: -3.8029366, z: 0, w: 10.392765}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1201748475
@@ -50509,6 +50477,7 @@ GameObject:
   - component: {fileID: 1620850020}
   - component: {fileID: 1620850019}
   - component: {fileID: 1620850018}
+  - component: {fileID: 1620850029}
   - component: {fileID: 1620850015}
   - component: {fileID: 1620850014}
   - component: {fileID: 1620850013}
@@ -50537,7 +50506,7 @@ Transform:
   m_GameObject: {fileID: 1620850009}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7280719, z: 0, w: 0.68550074}
-  m_LocalPosition: {x: -435, y: 0, z: -15}
+  m_LocalPosition: {x: -415, y: 0, z: -115}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -50617,6 +50586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7607e0bd57676d4081c0989124cbb7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movimiento
+  puedeMoverse: 1
   walkSpeed: 15
   runSpeed: 30
   maxStamina: 35
@@ -51088,6 +51058,33 @@ MonoBehaviour:
   tiempo: 0
   sound_a: {fileID: 1620850027}
   sound_b: {fileID: 1620850026}
+--- !u!114 &1620850029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620850009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee4ddd6cd760034688e8f70df76c4a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pensamientos
+  contorno: {fileID: 1816549232}
+  textoPensamiento: {fileID: 1982449702}
+  tiempoMin: 10
+  tiempoMax: 15
+  velocidadTipeo: 0.4
+  tiempoVisible: 3
+  pensamientos:
+  - "\xBFY si ya no hay salida?"
+  - Tengo que mantener la calma, solo es un bosque
+  - Dios, siento que alguien me observa y acecha constantemente
+  - "Mi padres y abuelos dec\xEDan que quien viera la luz no volvia a la civilizaci\xF3n,
+    pero solo son tonterias \xBFno?"
+  - "Siempre que escuchaba sobre este mito pens\xE9 que era mentira, ahora veo\r\nque
+    no."
+  - "No puedo creer que haya aceptado este reto\u2026"
 --- !u!1 &1622522997
 GameObject:
   m_ObjectHideFlags: 0
@@ -51120,7 +51117,6 @@ Transform:
   - {fileID: 1389586958}
   - {fileID: 493899831}
   - {fileID: 69185988}
-  - {fileID: 1055630624}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1623555256
@@ -62192,6 +62188,115 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2063524316}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2069276140
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2069276142}
+  - component: {fileID: 2069276141}
+  m_Layer: 0
+  m_Name: Area Casa
+  m_TagString: Casa
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &2069276141
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069276140}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 85.79419, y: 49.226204, z: 58.29152}
+  m_Center: {x: 15.812691, y: 3.6327095, z: 6.6533127}
+--- !u!4 &2069276142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069276140}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -73.33856, y: 9.45934, z: -234.93364}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 762129716}
+  - {fileID: 712555932}
+  - {fileID: 2071168451}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2071168450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2071168451}
+  - component: {fileID: 2071168452}
+  m_Layer: 0
+  m_Name: AreaValla (1)
+  m_TagString: Granja
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2071168451
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071168450}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.2546264, z: -0, w: 0.9670395}
+  m_LocalPosition: {x: -137.5, y: -10.05, z: 326.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2069276142}
+  m_LocalEulerAnglesHint: {x: 0, y: -29.503, z: 0}
+--- !u!65 &2071168452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071168450}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 1, z: 113.08527}
+  m_Center: {x: -0.00007091481, y: 0, z: -42.44069}
 --- !u!4 &2074050025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0997e7ed63b4fa4391231120b341a4b, type: 3}
@@ -63824,3 +63929,4 @@ SceneRoots:
   - {fileID: 1278675556}
   - {fileID: 1059552495}
   - {fileID: 983821338}
+  - {fileID: 2069276142}
