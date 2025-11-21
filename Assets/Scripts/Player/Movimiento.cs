@@ -85,8 +85,8 @@ public class Movimiento : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.LeftShift) && stamina >= 0)
         {
-            velocidad = 30f;
-            stamina -= 0.7f * Time.fixedDeltaTime;
+            velocidad = 25f;
+            stamina -= 1f * Time.fixedDeltaTime;
         }
         else
         {
