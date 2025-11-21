@@ -12,7 +12,7 @@ public class Pensamientos : MonoBehaviour
     [Header("Opciones")]
     public float tiempoMin = 5f;
     public float tiempoMax = 12f;
-    public float velocidadTipeo = 0.2f;
+    public float velocidadTipeo = 3f;
     public float tiempoVisible = 3f;
 
     [Header("Pensamientos")]
