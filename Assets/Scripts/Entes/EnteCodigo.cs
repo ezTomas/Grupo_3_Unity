@@ -58,7 +58,7 @@ public class EnteCodigo : MonoBehaviour
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
         detector = GameObject.Find("Player").GetComponent<DetectorLibrosyVelas>();
         dialogoMark.SetActive(false);
-
+        pensamientoSystem = GameObject.Find("PensamientosController").GetComponent<Pensamientos>();
         misiones = GameObject.Find("Misiones").GetComponent<Misiones>();
 
         //Velas apagadas al inicio
@@ -85,11 +85,11 @@ public class EnteCodigo : MonoBehaviour
 
             myTimer.StartTimer();
 
-            pensamientoSystem.DesactivarPensamientos();
 
             if (!dialogoStar)
             {
                 StartDialogo();
+
             }
 
 
@@ -119,7 +119,6 @@ public class EnteCodigo : MonoBehaviour
         {
             dialogoPanel.SetActive(true);
 
-            pensamientoSystem.DesactivarPensamientos();
 
             if (!dialogoStar)
             {
@@ -153,11 +152,12 @@ public class EnteCodigo : MonoBehaviour
 
     public void StartDialogo()
     {
+        Time.timeScale = 0f;
         dialogoStar = true;
         dialogoPanel.SetActive(true);
         StartCoroutine(ShowLine());
         lineIndex = 0;
-        Time.timeScale = 0f;
+
     }
 
     public void StartDialogo2()

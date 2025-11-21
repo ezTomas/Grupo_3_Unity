@@ -86,7 +86,6 @@ public class Pensamientos : MonoBehaviour
         if (cicloPensamientos != null)
             StopCoroutine(cicloPensamientos);
 
-        StopAllCoroutines();
 
         contorno.SetActive(false);
         mostrando = false;
@@ -102,5 +101,22 @@ public class Pensamientos : MonoBehaviour
             StopCoroutine(cicloPensamientos);
 
         cicloPensamientos = StartCoroutine(PensarCadaTanto());
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Casa"))
+        {
+            DesactivarPensamientos();
+            StopAllCoroutines();
+        }
+
+        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+         ActivarPensamientos();
+     
     }
 }

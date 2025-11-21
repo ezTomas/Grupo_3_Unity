@@ -51,6 +51,8 @@ public class EnteCodigo4 : MonoBehaviour
         espejo = GameObject.Find("Player").GetComponent<UtilidadDeEspejo>();
         enteNumeroOrigin = GameObject.Find("Ente Principal").GetComponent<EnteCodigo>();
 
+        pensamientoSystem = GameObject.Find("PensamientosController").GetComponent<Pensamientos>();
+
         enteTercero.gameObject.SetActive(false);
 
         dialogoMark.SetActive(false);
@@ -66,6 +68,8 @@ public class EnteCodigo4 : MonoBehaviour
         if (isPlayerinRange && Input.GetKeyDown(KeyCode.E) && enteNumeroOrigin.enteNumero == 2 && enteVisto == true)
         {
             pensamientoSystem.DesactivarPensamientos();
+
+
 
             if (!dialogoStar)
             {
